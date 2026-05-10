@@ -12,7 +12,7 @@
 
 <decoder name="fortinet-fortigate-fields-v7">
   <parent>fortinet-fortigate-firewall</parent>
-  <regex>devname="(\.*)"|devname=(\.*)\s|devname=(\.*)$</regex>
+  <regex>\s+devname="(\.*)"|\s+devname=(\.*)\s|\s+devname=(\.*)$</regex>
   <order>devname</order>
 </decoder>
 

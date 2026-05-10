@@ -11100,4 +11100,54 @@
         <description>FortiNDR scan timeout (notice)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
+
+    <!-- ===== FortiOS 8.0.0 additions ===== -->
+
+    <rule id="101397" level="6">
+        <!-- LOGID_APP_CTRL_DETECT_L2 (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">028738$</field>
+        <description>Application control Layer 2 protocol detected</description>
+        <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.warning</group>
+    </rule>
+
+    <rule id="101398" level="8">
+        <!-- LOG_ID_DLP_FORTIDATA_ERROR_NOTIF (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">024580$</field>
+        <description>DLP FortiData service error (notification)</description>
+        <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.error</group>
+    </rule>
+
+    <rule id="101399" level="6">
+        <!-- LOG_ID_DLP_FORTIDATA_ERROR_WARNING (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">024581$</field>
+        <description>DLP FortiData service error (warning)</description>
+        <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.warning</group>
+    </rule>
+
+    <rule id="101400" level="3">
+        <!-- LOG_ID_DNS_SVCPARAM_ECH (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">054806$</field>
+        <description>DNS SVCPARAM ECH record queried</description>
+        <group>fortios.event.dns,fortios.category.dns-query,fortios.severity.information</group>
+    </rule>
+
+    <rule id="101401" level="4">
+        <!-- LOG_ID_DNS_NXDOMAIN_PASS (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">054807$</field>
+        <description>DNS NXDOMAIN response passed</description>
+        <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.notice</group>
+    </rule>
+
+    <rule id="101402" level="3">
+        <!-- LOG_ID_DEBUG_PRINT (FortiOS 8.0.0+) -->
+        <if_sid>100010</if_sid>
+        <field name="logid">065290$</field>
+        <description>FortiGate debug print message</description>
+        <group>fortios.event.debug,fortios.category.debug,fortios.severity.debug</group>
+    </rule>
 </group>

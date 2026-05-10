@@ -1,6 +1,6 @@
 # wazuh-fortigate-v7
 
-Wazuh decoders and detection rules for **FortiGate firewalls running FortiOS 7.x**.
+Wazuh decoders and detection rules for **FortiGate firewalls running FortiOS 7.x and 8.x**.
 
 Covers all major FortiGate log categories — traffic, IPS, AV, application control, web filter, DNS, VPN, email filter, DLP, SSH, SSL, WAF, anomaly detection, and system events — with proper Wazuh alert levels mapped to FortiGate severity.
 
@@ -20,6 +20,7 @@ Covers all major FortiGate log categories — traffic, IPS, AV, application cont
 - [Log Categories and Groups](#log-categories-and-groups)
 - [Log ID Structure](#log-id-structure)
 - [Covered Log IDs](#covered-log-ids)
+- [FortiOS Version Compatibility](#fortios-version-compatibility)
 - [Troubleshooting](#troubleshooting)
 - [Known Limitations](#known-limitations)
 
@@ -30,9 +31,9 @@ Covers all major FortiGate log categories — traffic, IPS, AV, application cont
 FortiGate firewalls emit structured key=value logs across dozens of event types. This project provides:
 
 - **738 decoders** — extract every FortiGate log field into named Wazuh fields
-- **1387 rules** — match specific FortiGate log IDs and assign alert levels proportional to severity
+- **1393 rules** — match specific FortiGate log IDs and assign alert levels proportional to severity
 
-Built against the **FortiOS 7.0, 7.2, and 7.4 Log Reference** and cross-validated against FortiOS 7.4.4 documentation for log ID format and field structure.
+Built against the **FortiOS 7.0, 7.2, and 7.4 Log Reference**, cross-validated against FortiOS 7.4.4 and 8.0.0 documentation. FortiOS 8.0.0 introduced 6 new log IDs which are covered by rules 101397–101402.
 
 ---
 
@@ -40,7 +41,7 @@ Built against the **FortiOS 7.0, 7.2, and 7.4 Log Reference** and cross-validate
 
 | Component | Minimum version |
 |---|---|
-| FortiOS | 7.0 |
+| FortiOS | 7.0 (8.0.0+ also supported) |
 | Wazuh Manager | 4.x |
 | Wazuh Agent | Not required — uses syslog ingestion |
 
@@ -204,7 +205,7 @@ systemctl restart wazuh-manager
 | File | Description |
 |---|---|
 | `0100-fortigate_decoders.xml` | All 738 FortiGate decoders |
-| `0391-fortigate_rules.xml` | All 1387 FortiGate rules |
+| `0391-fortigate_rules.xml` | All 1393 FortiGate rules (rules 101397–101402 cover FortiOS 8.0.0 additions) |
 
 The file numbering follows Wazuh convention: decoders below `0500` load before most built-in decoders; rules in the `100000+` range are the custom rule space.
 
@@ -333,6 +334,7 @@ Each rule assigns Wazuh groups in the format `fortios.event.<type>,fortios.categ
 | WAF | `fortios.event.waf` | waf-signature, waf-http-constraint |
 | System events | `fortios.event.event` (category: system) | login, config-change, ha |
 | Anomaly | `fortios.event.anomaly` | tcp/udp, icmp |
+| Debug | `fortios.event.debug` | debug-print *(8.0.0+)* |
 
 These groups can be used in Wazuh to build dashboards, filters, and integrations (e.g., send all `fortios.event.ips` events to a SIEM or ticketing system).
 
@@ -371,6 +373,7 @@ FortiOS 7.x log IDs are 10-digit zero-padded decimal numbers with this structure
 | 17 | SSL | `utm` (subtype=ssl) |
 | 19 | File filter | `utm` (subtype=file-filter) |
 | 20 | ICAP | `utm` (subtype=icap) |
+| — | Debug | `debug` *(8.0.0+)* |
 
 ---
 
@@ -396,6 +399,7 @@ FortiOS 7.x log IDs are 10-digit zero-padded decimal numbers with this structure
 | 100025 | 028721 | SSH application block | 6 |
 | 100026 | 028736 | Port enforcement | 6 |
 | 100027 | 028737 | Protocol enforcement | 6 |
+| 101397 | 028738 | Layer 2 protocol detected *(8.0.0+)* | 6 |
 
 ### DLP (09xx)
 
@@ -405,6 +409,8 @@ FortiOS 7.x log IDs are 10-digit zero-padded decimal numbers with this structure
 | 100029 | 024577 | DLP sensor rule violation (notice) | 4 |
 | 100030 | 024578 | DLP fingerprint document source | 4 |
 | 100031 | 024579 | DLP fingerprint document error | 6 |
+| 101398 | 024580 | DLP FortiData service error (notification) *(8.0.0+)* | 8 |
+| 101399 | 024581 | DLP FortiData service error (warning) *(8.0.0+)* | 6 |
 
 ### DNS Filter (15xx)
 
@@ -417,6 +423,8 @@ FortiOS 7.x log IDs are 10-digit zero-padded decimal numbers with this structure
 | 100036 | 054600 | Domain blocked — botnet C&C (IP) | 6 |
 | 100037 | 054601 | Domain blocked — botnet C&C (domain) | 6 |
 | 100038–100043 | 054800–054805 | FortiGuard DNS rating events | 3–4 |
+| 101400 | 054806 | DNS SVCPARAM ECH record queried *(8.0.0+)* | 3 |
+| 101401 | 054807 | DNS NXDOMAIN response passed *(8.0.0+)* | 4 |
 
 ### Email Filter (05xx)
 
@@ -473,6 +481,60 @@ Covers 700+ event log IDs including:
 |---|---|---|---|
 | (various) | 000002 | Forward traffic allowed | 3 |
 | (various) | 000013 | Forward traffic session close | 3 |
+
+### Debug (FortiOS 8.0.0+)
+
+| Rule | Log ID | Description | Level |
+|---|---|---|---|
+| 101402 | 065290 | FortiGate debug print message | 3 |
+
+---
+
+## FortiOS Version Compatibility
+
+### FortiOS 6.x
+
+Not supported. FortiOS 6.x syslog omits the `devname`, `devid`, `eventtime`, and `tz` fields from the log header. The root decoder prematch requires all six of these fields and will not match 6.x logs.
+
+### FortiOS 7.x (primary target)
+
+Fully supported. The decoders and rules were built and validated against the FortiOS 7.0, 7.2, and 7.4 log references. The log format is stable across all 7.x minor versions.
+
+### FortiOS 8.0.0
+
+Supported. The log format is identical to 7.x — the same `date= time= devname= devid= eventtime= tz= logid=` header structure is preserved. FortiOS 8.0.0 introduced 6 new log IDs not present in 7.x, all of which are covered by rules 101397–101402.
+
+#### New log IDs in FortiOS 8.0.0
+
+| Rule | Log ID suffix | Constant | Category | Description | Level |
+|---|---|---|---|---|---|
+| 101397 | `028738` | `LOGID_APP_CTRL_DETECT_L2` | Application Control | Layer 2 protocol detected | 6 |
+| 101398 | `024580` | `LOG_ID_DLP_FORTIDATA_ERROR_NOTIF` | DLP | FortiData service error (notification) | 8 |
+| 101399 | `024581` | `LOG_ID_DLP_FORTIDATA_ERROR_WARNING` | DLP | FortiData service error (warning) | 6 |
+| 101400 | `054806` | `LOG_ID_DNS_SVCPARAM_ECH` | DNS Filter | DNS SVCPARAM ECH record queried | 3 |
+| 101401 | `054807` | `LOG_ID_DNS_NXDOMAIN_PASS` | DNS Filter | DNS NXDOMAIN response passed | 4 |
+| 101402 | `065290` | `LOG_ID_DEBUG_PRINT` | Debug *(new category)* | FortiGate debug print message | 3 |
+
+#### Log ID ranges: confirmed unchanged between 7.4.4 and 8.0.0
+
+| Category | 7.4.4 range | 8.0.0 range |
+|---|---|---|
+| Anomaly | 018432–018434 | 018432–018434 |
+| CASB | 010000–010002 | 010000–010002 |
+| EmailFilter | 020480–020510 | 020480–020510 |
+| APP-CTRL | 028672–028737 | 028672–**028738** |
+| DLP | 024576–024579 | 024576–**024581** |
+| DNS | 054000–054805 | 054000–**054807** |
+
+#### New features in FortiOS 8.0.0 relevant to logging
+
+| Feature | Impact on decoders/rules |
+|---|---|
+| **Custom syslog format** (`log custom-format` / `log-template`) | Breaks these decoders — they require `set format default` (raw key=value). Do not use custom syslog templates if using this ruleset. |
+| **Hostname resolution timing** (`resolve-ip` vs `resolve-hosts`) | The `hostname` field may now be populated at log creation time (`resolve-ip`). No decoder change needed; the existing `hostname` field decoder handles it. |
+| **Enhanced TACACS+ accounting** | The `reason` field in admin event logs now includes full CLI command text. Existing rules still fire; the additional data is available as a decoded field. |
+| **Session helper stats for FTP/TFTP/RTSP/PPTP** | May generate additional event sub-logs. Coverage depends on whether FortiGate assigns new log IDs for these; no new rules were required for 8.0.0 release. |
+| **SFTP + LZ4 log uploads** | Log storage transfer only — no impact on syslog format or Wazuh ingestion. |
 
 ---
 
@@ -543,9 +605,9 @@ Alternatively, add specific email or integration actions for level 10+ events on
 
 **FortiOS version compatibility:**
 
-- Designed and tested against **FortiOS 7.0, 7.2, and 7.4**.
+- Designed and tested against **FortiOS 7.0, 7.2, 7.4, and 8.0.0**.
 - FortiOS 6.x logs use a different header field order and will not match the root decoder prematch.
-- FortiOS 7.6+ log IDs should remain compatible but have not been validated.
+- FortiOS 8.0.0 is fully supported; its 6 new log IDs are covered by rules 101397–101402.
 
 **Log ID suffix matching:**
 

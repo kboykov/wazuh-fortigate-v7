@@ -17,7 +17,7 @@
         <!-- LOGID_ATTCK_ANOMALY_TCP_UDP -->
         <if_sid>100010</if_sid>
         <field name="logid">018432$</field>
-        <description>Fortigate: Attack detected by UDP/TCP anomaly</description>
+        <description>Fortigate: Attack detected by UDP/TCP anomaly - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.anomaly,fortios.category.anomaly,fortios.severity.alert</group>
     </rule>
 
@@ -25,7 +25,7 @@
         <!-- LOGID_ATTCK_ANOMALY_ICMP -->
         <if_sid>100010</if_sid>
         <field name="logid">018433$</field>
-        <description>Fortigate: Attack detected by ICMP anomaly</description>
+        <description>Fortigate: Attack detected by ICMP anomaly - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.anomaly,fortios.category.anomaly,fortios.severity.alert</group>
     </rule>
 
@@ -33,7 +33,7 @@
         <!-- LOGID_ATTCK_ANOMALY_OTHERS -->
         <if_sid>100010</if_sid>
         <field name="logid">018434$</field>
-        <description>Fortigate: Attack detected by other anomaly</description>
+        <description>Fortigate: Attack detected by other anomaly - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.anomaly,fortios.category.anomaly,fortios.severity.alert</group>
     </rule>
 
@@ -41,7 +41,7 @@
         <!-- LOGID_APP_CTRL_IM_BASIC -->
         <if_sid>100010</if_sid>
         <field name="logid">028672$</field>
-        <description>Fortigate: Application control IM-basic</description>
+        <description>Fortigate: Application control IM-basic - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -49,7 +49,7 @@
         <!-- LOGID_APP_CTRL_IM_BASIC_WITH_STATUS -->
         <if_sid>100010</if_sid>
         <field name="logid">028673$</field>
-        <description>Fortigate: Application control IM</description>
+        <description>Fortigate: Application control IM - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -57,7 +57,7 @@
         <!-- LOGID_APP_CTRL_IM_BASIC_WITH_COUNT -->
         <if_sid>100010</if_sid>
         <field name="logid">028674$</field>
-        <description>Fortigate: Application control IM (chat message count)</description>
+        <description>Fortigate: Application control IM (chat message count) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -65,7 +65,7 @@
         <!-- LOGID_APP_CTRL_IM_FILE -->
         <if_sid>100010</if_sid>
         <field name="logid">028675$</field>
-        <description>Fortigate: Application control IM (file)</description>
+        <description>Fortigate: Application control IM (file) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -73,7 +73,7 @@
         <!-- LOGID_APP_CTRL_IM_CHAT -->
         <if_sid>100010</if_sid>
         <field name="logid">028676$</field>
-        <description>Fortigate: Application control IM (chat)</description>
+        <description>Fortigate: Application control IM (chat) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -81,7 +81,7 @@
         <!-- LOGID_APP_CTRL_IM_CHAT_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">028677$</field>
-        <description>Fortigate: Application control IM (chat blocked)</description>
+        <description>Fortigate: Application control IM (chat blocked) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -89,7 +89,7 @@
         <!-- LOGID_APP_CTRL_IM_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">028678$</field>
-        <description>Fortigate: Application control IM (blocked)</description>
+        <description>Fortigate: Application control IM (blocked) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -97,7 +97,7 @@
         <!-- LOGID_APP_CTRL_IPS_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">028704$</field>
-        <description>Fortigate: Application control (IPS) (pass)</description>
+        <description>Fortigate: Application control (IPS) (pass) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -105,7 +105,7 @@
         <!-- LOGID_APP_CTRL_IPS_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">028705$</field>
-        <description>Fortigate: Application control (IPS) (block)</description>
+        <description>Fortigate: Application control (IPS) (block) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.warning</group>
     </rule>
 
@@ -113,7 +113,7 @@
         <!-- LOGID_APP_CTRL_IPS_RESET -->
         <if_sid>100010</if_sid>
         <field name="logid">028706$</field>
-        <description>Fortigate: Application control (IPS) (reset)</description>
+        <description>Fortigate: Application control (IPS) (reset) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.warning</group>
     </rule>
 
@@ -121,7 +121,7 @@
         <!-- LOGID_APP_CTRL_SSH_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">028720$</field>
-        <description>Fortigate: Application control SSH (pass)</description>
+        <description>Fortigate: Application control SSH (pass) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.information</group>
     </rule>
 
@@ -129,7 +129,7 @@
         <!-- LOGID_APP_CTRL_SSH_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">028721$</field>
-        <description>Fortigate: Application control SSH (block)</description>
+        <description>Fortigate: Application control SSH (block) - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.warning</group>
     </rule>
 
@@ -137,7 +137,7 @@
         <!-- LOGID_APP_CTRL_PORT_ENF -->
         <if_sid>100010</if_sid>
         <field name="logid">028736$</field>
-        <description>Fortigate: Application control port enforcement</description>
+        <description>Fortigate: Application control port enforcement - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.port-violation,fortios.severity.warning</group>
     </rule>
 
@@ -145,7 +145,7 @@
         <!-- LOGID_APP_CTRL_PROTO_ENF -->
         <if_sid>100010</if_sid>
         <field name="logid">028737$</field>
-        <description>Fortigate: Application control protocol enforcement</description>
+        <description>Fortigate: Application control protocol enforcement - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.protocol-violation,fortios.severity.warning</group>
     </rule>
 
@@ -153,7 +153,7 @@
         <!-- LOG_ID_DLP_WARN -->
         <if_sid>100010</if_sid>
         <field name="logid">024576$</field>
-        <description>Fortigate: Data leak detected by specified DLP sensor rule</description>
+        <description>Fortigate: Data leak detected by specified DLP sensor rule - profile $(profile): $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.warning</group>
     </rule>
 
@@ -161,7 +161,7 @@
         <!-- LOG_ID_DLP_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">024577$</field>
-        <description>Fortigate: Data leak detected by specified DLP sensor rule</description>
+        <description>Fortigate: Data leak detected by specified DLP sensor rule - profile $(profile): $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.notice</group>
     </rule>
 
@@ -169,7 +169,7 @@
         <!-- LOG_ID_DLP_DOC_SOURCE -->
         <if_sid>100010</if_sid>
         <field name="logid">024578$</field>
-        <description>Fortigate: DLP fingerprint document source notice</description>
+        <description>Fortigate: DLP fingerprint document source notice - profile $(profile) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp-docsource,fortios.severity.notice</group>
     </rule>
 
@@ -177,7 +177,7 @@
         <!-- LOG_ID_DLP_DOC_SOURCE_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">024579$</field>
-        <description>Fortigate: DLP fingerprint document source error</description>
+        <description>Fortigate: DLP fingerprint document source error - profile $(profile) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp-docsource,fortios.severity.warning</group>
     </rule>
 
@@ -185,7 +185,7 @@
         <!-- LOG_ID_DNS_QUERY -->
         <if_sid>100010</if_sid>
         <field name="logid">054000$</field>
-        <description>Fortigate: DNS query message</description>
+        <description>Fortigate: DNS query message - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-query,fortios.severity.information</group>
     </rule>
 
@@ -193,7 +193,7 @@
         <!-- LOG_ID_DNS_RESOLV_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">054200$</field>
-        <description>Fortigate: DNS resolution error message</description>
+        <description>Fortigate: DNS resolution error message - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.error</group>
     </rule>
 
@@ -201,7 +201,7 @@
         <!-- LOG_ID_DNS_URL_FILTER_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">054400$</field>
-        <description>Fortigate: Domain blocked because it is in the domain-filter list</description>
+        <description>Fortigate: Domain blocked because it is in the domain-filter list - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.warning</group>
     </rule>
 
@@ -209,7 +209,7 @@
         <!-- LOG_ID_DNS_URL_FILTER_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">054401$</field>
-        <description>Fortigate: Domain allowed because it is in the domain-filter list</description>
+        <description>Fortigate: Domain allowed because it is in the domain-filter list - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.information</group>
     </rule>
 
@@ -217,7 +217,7 @@
         <!-- LOG_ID_DNS_BOTNET_IP -->
         <if_sid>100010</if_sid>
         <field name="logid">054600$</field>
-        <description>Fortigate: Domain blocked by DNS botnet C&amp;C (IP)</description>
+        <description>Fortigate: Domain blocked by DNS botnet C&amp;C (IP) - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.warning</group>
     </rule>
 
@@ -225,7 +225,7 @@
         <!-- LOG_ID_DNS_BOTNET_DOMAIN -->
         <if_sid>100010</if_sid>
         <field name="logid">054601$</field>
-        <description>Fortigate: Domain blocked by DNS botnet C&amp;C (Domain)</description>
+        <description>Fortigate: Domain blocked by DNS botnet C&amp;C (Domain) - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.warning</group>
     </rule>
 
@@ -233,7 +233,7 @@
         <!-- LOG_ID_DNS_FTGD_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">054800$</field>
-        <description>Fortigate: FortiGuard rating error warning</description>
+        <description>Fortigate: FortiGuard rating error warning - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.warning</group>
     </rule>
 
@@ -241,7 +241,7 @@
         <!-- LOG_ID_DNS_FTGD_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">054801$</field>
-        <description>Fortigate: FortiGuard rating error occurred</description>
+        <description>Fortigate: FortiGuard rating error occurred - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.error</group>
     </rule>
 
@@ -249,7 +249,7 @@
         <!-- LOG_ID_DNS_FTGD_CAT_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">054802$</field>
-        <description>Fortigate: Domain is monitored</description>
+        <description>Fortigate: Domain is monitored - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.notice</group>
     </rule>
 
@@ -257,7 +257,7 @@
         <!-- LOG_ID_DNS_FTGD_CAT_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">054803$</field>
-        <description>Fortigate: Domain belongs to a denied category in policy</description>
+        <description>Fortigate: Domain belongs to a denied category in policy - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.warning</group>
     </rule>
 
@@ -265,7 +265,7 @@
         <!-- LOG_ID_DNS_SAFE_SEARCH -->
         <if_sid>100010</if_sid>
         <field name="logid">054804$</field>
-        <description>Fortigate: DNS Safe Search enforced</description>
+        <description>Fortigate: DNS Safe Search enforced - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.notice</group>
     </rule>
 
@@ -273,7 +273,7 @@
         <!-- LOG_ID_DNS_LOCAL -->
         <if_sid>100010</if_sid>
         <field name="logid">054805$</field>
-        <description>Fortigate: DNS local query</description>
+        <description>Fortigate: DNS local query - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.information</group>
     </rule>
 
@@ -281,7 +281,7 @@
         <!-- LOGID_ANTISPAM_EMAIL_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">020480$</field>
-        <description>Fortigate: SPAM notification</description>
+        <description>Fortigate: SPAM notification - from $(from) to $(to)</description>
         <group>fortios.event.emailfilter,fortios.category.spam,fortios.severity.notice</group>
     </rule>
 
@@ -289,7 +289,7 @@
         <!-- LOGID_EMAIL_GENERAL_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">020481$</field>
-        <description>Fortigate: Email message</description>
+        <description>Fortigate: Email message - from $(from) to $(to)</description>
         <group>fortios.event.emailfilter,fortios.category.email,fortios.severity.information</group>
     </rule>
 
@@ -297,7 +297,7 @@
         <!-- LOGID_ANTISPAM_EMAIL_BWORD_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">020482$</field>
-        <description>Fortigate: Banned word notification</description>
+        <description>Fortigate: Banned word notification - from $(from) to $(to)</description>
         <group>fortios.event.emailfilter,fortios.category.bannedword,fortios.severity.notice</group>
     </rule>
 
@@ -305,7 +305,7 @@
         <!-- LOGID_ANTISPAM_FTGD_ERR -->
         <if_sid>100010</if_sid>
         <field name="logid">020509$</field>
-        <description>Fortigate: FortiGuard error message</description>
+        <description>Fortigate: FortiGuard error message - from $(from) to $(to)</description>
         <group>fortios.event.emailfilter,fortios.category.ftgd_err,fortios.severity.notice</group>
     </rule>
 
@@ -313,7 +313,7 @@
         <!-- LOGID_ANTISPAM_EMAIL_WEBMAIL_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">020510$</field>
-        <description>Fortigate: Webmail message</description>
+        <description>Fortigate: Webmail message - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.emailfilter,fortios.category.webmail,fortios.severity.information</group>
     </rule>
 
@@ -8545,7 +8545,7 @@
         <!-- LOG_ID_FILE_FILTER_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">064000$</field>
-        <description>Fortigate: File was blocked by file filter</description>
+        <description>Fortigate: File was blocked by file filter - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.file-filter,fortios.category.file-filter,fortios.severity.warning</group>
     </rule>
 
@@ -8553,7 +8553,7 @@
         <!-- LOG_ID_FILE_FILTER_LOG -->
         <if_sid>100010</if_sid>
         <field name="logid">064001$</field>
-        <description>Fortigate: File was detected by file filter</description>
+        <description>Fortigate: File was detected by file filter - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.file-filter,fortios.category.file-filter,fortios.severity.notice</group>
     </rule>
 
@@ -8569,7 +8569,7 @@
         <!-- LOGID_GTP_FORWARD -->
         <if_sid>100010</if_sid>
         <field name="logid">041216$</field>
-        <description>Fortigate: GTP forward</description>
+        <description>Fortigate: GTP forward - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8577,7 +8577,7 @@
         <!-- LOGID_GTP_DENY -->
         <if_sid>100010</if_sid>
         <field name="logid">041217$</field>
-        <description>Fortigate: GTP deny</description>
+        <description>Fortigate: GTP deny - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8585,7 +8585,7 @@
         <!-- LOGID_GTP_RATE_LIMIT -->
         <if_sid>100010</if_sid>
         <field name="logid">041218$</field>
-        <description>Fortigate: GTP rate limit</description>
+        <description>Fortigate: GTP rate limit - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8593,7 +8593,7 @@
         <!-- LOGID_GTP_STATE_INVALID -->
         <if_sid>100010</if_sid>
         <field name="logid">041219$</field>
-        <description>Fortigate: GTP state invalid</description>
+        <description>Fortigate: GTP state invalid - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8601,7 +8601,7 @@
         <!-- LOGID_GTP_TUNNEL_LIMIT -->
         <if_sid>100010</if_sid>
         <field name="logid">041220$</field>
-        <description>Fortigate: Tunnel limit GTP message. These messages occur only when the maximum number of GTP</description>
+        <description>Fortigate: Tunnel limit GTP message. These messages occur only when the maximum number of GTP - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8609,7 +8609,7 @@
         <!-- LOGID_GTP_TRAFFIC_COUNT -->
         <if_sid>100010</if_sid>
         <field name="logid">041221$</field>
-        <description>Fortigate: Statistic summary information when the GTP tunnel is being torn down</description>
+        <description>Fortigate: Statistic summary information when the GTP tunnel is being torn down - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8617,7 +8617,7 @@
         <!-- LOGID_GTP_USER_DATA -->
         <if_sid>100010</if_sid>
         <field name="logid">041222$</field>
-        <description>Fortigate: GTP user data</description>
+        <description>Fortigate: GTP user data - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8625,7 +8625,7 @@
         <!-- LOGID_GTPV2_FORWARD -->
         <if_sid>100010</if_sid>
         <field name="logid">041223$</field>
-        <description>Fortigate: GTPv2 forward message</description>
+        <description>Fortigate: GTPv2 forward message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8633,7 +8633,7 @@
         <!-- LOGID_GTPV2_DENY -->
         <if_sid>100010</if_sid>
         <field name="logid">041224$</field>
-        <description>Fortigate: GTPv2 deny message</description>
+        <description>Fortigate: GTPv2 deny message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8641,7 +8641,7 @@
         <!-- LOGID_GTPV2_RATE_LIMIT -->
         <if_sid>100010</if_sid>
         <field name="logid">041225$</field>
-        <description>Fortigate: GTPv2 rate limit message</description>
+        <description>Fortigate: GTPv2 rate limit message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8649,7 +8649,7 @@
         <!-- LOGID_GTPV2_STATE_INVALID -->
         <if_sid>100010</if_sid>
         <field name="logid">041226$</field>
-        <description>Fortigate: GTPv2 state invalid message</description>
+        <description>Fortigate: GTPv2 state invalid message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8657,7 +8657,7 @@
         <!-- LOGID_GTPV2_TUNNEL_LIMIT -->
         <if_sid>100010</if_sid>
         <field name="logid">041227$</field>
-        <description>Fortigate: Tunnel limit GTP (version 2) message</description>
+        <description>Fortigate: Tunnel limit GTP (version 2) message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8665,7 +8665,7 @@
         <!-- LOGID_GTPV2_TRAFFIC_COUNT -->
         <if_sid>100010</if_sid>
         <field name="logid">041228$</field>
-        <description>Fortigate: Statistic summary information when the GTPv2 tunnel is being torn down</description>
+        <description>Fortigate: Statistic summary information when the GTPv2 tunnel is being torn down - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8673,7 +8673,7 @@
         <!-- LOGID_GTPU_FORWARD -->
         <if_sid>100010</if_sid>
         <field name="logid">041229$</field>
-        <description>Fortigate: GTPU forward message</description>
+        <description>Fortigate: GTPU forward message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8681,7 +8681,7 @@
         <!-- LOGID_GTPU_DENY -->
         <if_sid>100010</if_sid>
         <field name="logid">041230$</field>
-        <description>Fortigate: GTPU deny message</description>
+        <description>Fortigate: GTPU deny message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.gtp-all,fortios.severity.information</group>
     </rule>
 
@@ -8689,7 +8689,7 @@
         <!-- LOGID_PFCP_FORWARD -->
         <if_sid>100010</if_sid>
         <field name="logid">041231$</field>
-        <description>Fortigate: PFCP forward message</description>
+        <description>Fortigate: PFCP forward message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.pfcp-all,fortios.severity.information</group>
     </rule>
 
@@ -8697,7 +8697,7 @@
         <!-- LOGID_PFCP_DENY -->
         <if_sid>100010</if_sid>
         <field name="logid">041232$</field>
-        <description>Fortigate: PFCP deny message</description>
+        <description>Fortigate: PFCP deny message - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.pfcp-all,fortios.severity.information</group>
     </rule>
 
@@ -8705,7 +8705,7 @@
         <!-- LOGID_PFCP_TRAFFIC_COUNT -->
         <if_sid>100010</if_sid>
         <field name="logid">041233$</field>
-        <description>Fortigate: Statistic summary information when the PFCP session is being torn down</description>
+        <description>Fortigate: Statistic summary information when the PFCP session is being torn down - from $(srcip) to $(dstip)</description>
         <group>fortios.event.gtp,fortios.category.pfcp-all,fortios.severity.information</group>
     </rule>
 
@@ -8713,7 +8713,7 @@
         <!-- LOG_ID_ICAP_SERVER_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">060000$</field>
-        <description>Fortigate: Traffic blocked as it cannot be forwarded to ICAP Server.</description>
+        <description>Fortigate: Traffic blocked as it cannot be forwarded to ICAP Server. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.icap,fortios.category.icap,fortios.severity.warning</group>
     </rule>
 
@@ -8721,7 +8721,7 @@
         <!-- LOG_ID_ICAP_INFECTION_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">060001$</field>
-        <description>Fortigate: Traffic blocked as ICAP server found infection.</description>
+        <description>Fortigate: Traffic blocked as ICAP server found infection. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.icap,fortios.category.icap,fortios.severity.warning</group>
     </rule>
 
@@ -8729,7 +8729,7 @@
         <!-- LOG_ID_ICAP_SERVER_CLOSE_CONN -->
         <if_sid>100010</if_sid>
         <field name="logid">060002$</field>
-        <description>Fortigate: Traffic dropped as ICAP server connection is closed.</description>
+        <description>Fortigate: Traffic dropped as ICAP server connection is closed. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.icap,fortios.category.icap,fortios.severity.warning</group>
     </rule>
 
@@ -8737,7 +8737,7 @@
         <!-- LOGID_ATTCK_SIGNATURE_TCP_UDP -->
         <if_sid>100010</if_sid>
         <field name="logid">016384$</field>
-        <description>Fortigate: Attack detected by UDP/TCP signature</description>
+        <description>Fortigate: Attack detected by UDP/TCP signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.signature,fortios.severity.alert</group>
     </rule>
 
@@ -8745,7 +8745,7 @@
         <!-- LOGID_ATTCK_SIGNATURE_ICMP -->
         <if_sid>100010</if_sid>
         <field name="logid">016385$</field>
-        <description>Fortigate: Attack detected by ICMP signature</description>
+        <description>Fortigate: Attack detected by ICMP signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.signature,fortios.severity.alert</group>
     </rule>
 
@@ -8753,7 +8753,7 @@
         <!-- LOGID_ATTCK_SIGNATURE_OTHERS -->
         <if_sid>100010</if_sid>
         <field name="logid">016386$</field>
-        <description>Fortigate: Attack detected by other signature</description>
+        <description>Fortigate: Attack detected by other signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.signature,fortios.severity.alert</group>
     </rule>
 
@@ -8761,7 +8761,7 @@
         <!-- LOGID_ATTACK_MALICIOUS_URL -->
         <if_sid>100010</if_sid>
         <field name="logid">016399$</field>
-        <description>Fortigate: Attack detected by a malicious URL</description>
+        <description>Fortigate: Attack detected by a malicious URL - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.malicious-url,fortios.severity.warning</group>
     </rule>
 
@@ -8769,7 +8769,7 @@
         <!-- LOGID_ATTACK_BOTNET_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">016400$</field>
-        <description>Fortigate: Botnet C&amp;C Communication (warning)</description>
+        <description>Fortigate: Botnet C&amp;C Communication (warning) - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.botnet,fortios.severity.warning</group>
     </rule>
 
@@ -8777,7 +8777,7 @@
         <!-- LOGID_ATTACK_BOTNET_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">016401$</field>
-        <description>Fortigate: Botnet C&amp;C Communication (notice)</description>
+        <description>Fortigate: Botnet C&amp;C Communication (notice) - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ips,fortios.category.botnet,fortios.severity.notice</group>
     </rule>
 
@@ -8785,7 +8785,7 @@
         <!-- LOG_ID_SSH_COMMAND_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">061000$</field>
-        <description>Fortigate: SSH shell command is blocked</description>
+        <description>Fortigate: SSH shell command is blocked - user $(user) from $(srcip) to $(dstip): $(command)</description>
         <group>fortios.event.ssh,fortios.category.ssh-command,fortios.severity.warning</group>
     </rule>
 
@@ -8793,7 +8793,7 @@
         <!-- LOG_ID_SSH_COMMAND_BLOCK_ALERT -->
         <if_sid>100010</if_sid>
         <field name="logid">061001$</field>
-        <description>Fortigate: SSH shell command is blocked (alert)</description>
+        <description>Fortigate: SSH shell command is blocked (alert) - user $(user) from $(srcip) to $(dstip): $(command)</description>
         <group>fortios.event.ssh,fortios.category.ssh-command,fortios.severity.alert</group>
     </rule>
 
@@ -8801,7 +8801,7 @@
         <!-- LOG_ID_SSH_COMMAND_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">061002$</field>
-        <description>Fortigate: SSH shell command is detected</description>
+        <description>Fortigate: SSH shell command is detected - user $(user) from $(srcip) to $(dstip): $(command)</description>
         <group>fortios.event.ssh,fortios.category.ssh-command,fortios.severity.notice</group>
     </rule>
 
@@ -8809,7 +8809,7 @@
         <!-- LOG_ID_SSH_COMMAND_PASS_ALERT -->
         <if_sid>100010</if_sid>
         <field name="logid">061003$</field>
-        <description>Fortigate: SSH shell command is detected</description>
+        <description>Fortigate: SSH shell command is detected - user $(user) from $(srcip) to $(dstip): $(command)</description>
         <group>fortios.event.ssh,fortios.category.ssh-command,fortios.severity.alert</group>
     </rule>
 
@@ -8817,7 +8817,7 @@
         <!-- LOG_ID_SSH_CHANNEL_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">061010$</field>
-        <description>Fortigate: SSH channel is blocked</description>
+        <description>Fortigate: SSH channel is blocked - user $(user) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssh,fortios.category.ssh-channel,fortios.severity.warning</group>
     </rule>
 
@@ -8825,7 +8825,7 @@
         <!-- LOG_ID_SSH_CHANNEL_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">061011$</field>
-        <description>Fortigate: SSH channel is detected</description>
+        <description>Fortigate: SSH channel is detected - user $(user) from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssh,fortios.category.ssh-channel,fortios.severity.notice</group>
     </rule>
 
@@ -8833,7 +8833,7 @@
         <!-- LOG_ID_SSH_HOST_KEY_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">061012$</field>
-        <description>Fortigate: SSH connection is blocked, because host-key is not trust</description>
+        <description>Fortigate: SSH connection is blocked, because host-key is not trust - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssh,fortios.category.ssh-hostkey,fortios.severity.warning</group>
     </rule>
 
@@ -8841,7 +8841,7 @@
         <!-- LOG_ID_SSH_HOST_KEY_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">061013$</field>
-        <description>Fortigate: SSH host-key is not trust</description>
+        <description>Fortigate: SSH host-key is not trust - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssh,fortios.category.ssh-hostkey,fortios.severity.notice</group>
     </rule>
 
@@ -8849,7 +8849,7 @@
         <!-- LOG_ID_SSL_EXEMPT_ADDR -->
         <if_sid>100010</if_sid>
         <field name="logid">062004$</field>
-        <description>Fortigate: SSL connection is exempted based on address</description>
+        <description>Fortigate: SSL connection is exempted based on address - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-exempt,fortios.severity.notice</group>
     </rule>
 
@@ -8857,7 +8857,7 @@
         <!-- LOG_ID_SSL_EXEMPT_ALLOWLIST -->
         <if_sid>100010</if_sid>
         <field name="logid">062006$</field>
-        <description>Fortigate: SSL connection is exempted based on allowlist</description>
+        <description>Fortigate: SSL connection is exempted based on allowlist - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-exempt,fortios.severity.notice</group>
     </rule>
 
@@ -8865,7 +8865,7 @@
         <!-- LOG_ID_SSL_EXEMPT_FTGD_CATEGORY -->
         <if_sid>100010</if_sid>
         <field name="logid">062007$</field>
-        <description>Fortigate: SSL connection is exempted based on FortiGuard category rating</description>
+        <description>Fortigate: SSL connection is exempted based on FortiGuard category rating - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-exempt,fortios.severity.notice</group>
     </rule>
 
@@ -8873,7 +8873,7 @@
         <!-- LOG_ID_SSL_EXEMPT_LOCAL_CATEGORY -->
         <if_sid>100010</if_sid>
         <field name="logid">062008$</field>
-        <description>Fortigate: SSL connection is exempted based on local category rating</description>
+        <description>Fortigate: SSL connection is exempted based on local category rating - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-exempt,fortios.severity.notice</group>
     </rule>
 
@@ -8881,7 +8881,7 @@
         <!-- LOG_ID_SSL_EXEMPT_USER_CATEGORY -->
         <if_sid>100010</if_sid>
         <field name="logid">062009$</field>
-        <description>Fortigate: SSL connection is exempted based on user category rating</description>
+        <description>Fortigate: SSL connection is exempted based on user category rating - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-exempt,fortios.severity.notice</group>
     </rule>
 
@@ -8889,7 +8889,7 @@
         <!-- LOG_ID_SSL_NEGOTIATION_INSPECT -->
         <if_sid>100010</if_sid>
         <field name="logid">062100$</field>
-        <description>Fortigate: Continue inspect the SSL connection</description>
+        <description>Fortigate: Continue inspect the SSL connection - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-negotiation,fortios.severity.notice</group>
     </rule>
 
@@ -8897,7 +8897,7 @@
         <!-- LOG_ID_SSL_NEGOTIATION_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">062101$</field>
-        <description>Fortigate: SSL connection is blocked due to its SSL negotiation</description>
+        <description>Fortigate: SSL connection is blocked due to its SSL negotiation - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-negotiation,fortios.severity.warning</group>
     </rule>
 
@@ -8905,7 +8905,7 @@
         <!-- LOG_ID_SSL_NEGOTIATION_BYPASS -->
         <if_sid>100010</if_sid>
         <field name="logid">062102$</field>
-        <description>Fortigate: SSL connection is bypassed due to its SSL negotiation</description>
+        <description>Fortigate: SSL connection is bypassed due to its SSL negotiation - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-negotiation,fortios.severity.notice</group>
     </rule>
 
@@ -8913,7 +8913,7 @@
         <!-- LOG_ID_SSL_NEGOTIATION_INFO -->
         <if_sid>100010</if_sid>
         <field name="logid">062103$</field>
-        <description>Fortigate: SSL connection information</description>
+        <description>Fortigate: SSL connection information - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-negotiation,fortios.severity.information</group>
     </rule>
 
@@ -8921,7 +8921,7 @@
         <!-- LOG_ID_SSL_SERVER_CERT_INFO -->
         <if_sid>100010</if_sid>
         <field name="logid">062200$</field>
-        <description>Fortigate: SSL server certificate information</description>
+        <description>Fortigate: SSL server certificate information - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-server-cert-info,fortios.severity.information</group>
     </rule>
 
@@ -8929,7 +8929,7 @@
         <!-- LOG_ID_SSL_HANDSHAKE_INFO -->
         <if_sid>100010</if_sid>
         <field name="logid">062220$</field>
-        <description>Fortigate: SSL handshake information</description>
+        <description>Fortigate: SSL handshake information - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-handshake,fortios.severity.information</group>
     </rule>
 
@@ -8937,7 +8937,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_BLOCKLISTED -->
         <if_sid>100010</if_sid>
         <field name="logid">062300$</field>
-        <description>Fortigate: SSL connection is blocked due to the server certificate is blocklisted</description>
+        <description>Fortigate: SSL connection is blocked due to the server certificate is blocklisted - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.warning</group>
     </rule>
 
@@ -8945,7 +8945,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_RESIGN_TRUSTED -->
         <if_sid>100010</if_sid>
         <field name="logid">062301$</field>
-        <description>Fortigate: Server certificate has security problem</description>
+        <description>Fortigate: Server certificate has security problem - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.notice</group>
     </rule>
 
@@ -8953,7 +8953,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_RESIGN_UNTRUSTED -->
         <if_sid>100010</if_sid>
         <field name="logid">062302$</field>
-        <description>Fortigate: Re-signed server certificate as untrusted due to security problem</description>
+        <description>Fortigate: Re-signed server certificate as untrusted due to security problem - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.notice</group>
     </rule>
 
@@ -8961,7 +8961,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_BLOCKED -->
         <if_sid>100010</if_sid>
         <field name="logid">062303$</field>
-        <description>Fortigate: SSL connection is blocked due to server certificate security problem</description>
+        <description>Fortigate: SSL connection is blocked due to server certificate security problem - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.warning</group>
     </rule>
 
@@ -8969,7 +8969,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_SNI_MISMATCHED -->
         <if_sid>100010</if_sid>
         <field name="logid">062304$</field>
-        <description>Fortigate: SSL connection is blocked due to server certificate and SNI mismatched</description>
+        <description>Fortigate: SSL connection is blocked due to server certificate and SNI mismatched - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.warning</group>
     </rule>
 
@@ -8977,7 +8977,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_PROBE_FAILURE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">062305$</field>
-        <description>Fortigate: SSL connection is blocked due to unable to retrieve server's certificate</description>
+        <description>Fortigate: SSL connection is blocked due to unable to retrieve server's certificate - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.warning</group>
     </rule>
 
@@ -8985,7 +8985,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_PROBE_FAILURE_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">062306$</field>
-        <description>Fortigate: SSL connection is bypassed due to unable to retrieve server's certificate</description>
+        <description>Fortigate: SSL connection is bypassed due to unable to retrieve server's certificate - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.notice</group>
     </rule>
 
@@ -8993,7 +8993,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_SNI_MISMATCHED_INFO -->
         <if_sid>100010</if_sid>
         <field name="logid">062307$</field>
-        <description>Fortigate: Server certificate and SNI mismatched</description>
+        <description>Fortigate: Server certificate and SNI mismatched - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.information</group>
     </rule>
 
@@ -9177,7 +9177,7 @@
         <!-- MESGID_INFECT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008192$</field>
-        <description>Fortigate: Infected file detected by the FortiGate unit and blocked</description>
+        <description>Fortigate: Infected file detected by the FortiGate unit and blocked - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.warning</group>
     </rule>
 
@@ -9185,7 +9185,7 @@
         <!-- MESGID_INFECT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008193$</field>
-        <description>Fortigate: Infected file detected by the FortiGate unit and it passed</description>
+        <description>Fortigate: Infected file detected by the FortiGate unit and it passed - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.notice</group>
     </rule>
 
@@ -9193,7 +9193,7 @@
         <!-- MESGID_INFECT_MIME_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008194$</field>
-        <description>Fortigate: MIME header detected to have a virus and blocked</description>
+        <description>Fortigate: MIME header detected to have a virus and blocked - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.warning</group>
     </rule>
 
@@ -9201,7 +9201,7 @@
         <!-- MESGID_INFECT_MIME_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008195$</field>
-        <description>Fortigate: MIME header infected and passed</description>
+        <description>Fortigate: MIME header infected and passed - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.notice</group>
     </rule>
 
@@ -9209,7 +9209,7 @@
         <!-- MESGID_MIME_FILETYPE_EXE_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008200$</field>
-        <description>Fortigate: File is an executable (warning)</description>
+        <description>Fortigate: File is an executable (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.filetype-executable,fortios.severity.warning</group>
     </rule>
 
@@ -9217,7 +9217,7 @@
         <!-- MESGID_MIME_FILETYPE_EXE_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008201$</field>
-        <description>Fortigate: File is an executable (notice)</description>
+        <description>Fortigate: File is an executable (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.filetype-executable,fortios.severity.notice</group>
     </rule>
 
@@ -9225,7 +9225,7 @@
         <!-- MESGID_AVQUERY_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008202$</field>
-        <description>Fortigate: File reported infected by Outbreak Prevention (warning)</description>
+        <description>Fortigate: File reported infected by Outbreak Prevention (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.outbreak-prevention,fortios.severity.warning</group>
     </rule>
 
@@ -9233,7 +9233,7 @@
         <!-- MESGID_AVQUERY_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008203$</field>
-        <description>Fortigate: File reported infected by Outbreak Prevention (notice)</description>
+        <description>Fortigate: File reported infected by Outbreak Prevention (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.outbreak-prevention,fortios.severity.notice</group>
     </rule>
 
@@ -9241,7 +9241,7 @@
         <!-- MESGID_MIME_AVQUERY_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008204$</field>
-        <description>Fortigate: MIME data reported infected by Outbreak Prevention (warning)</description>
+        <description>Fortigate: MIME data reported infected by Outbreak Prevention (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.outbreak-prevention,fortios.severity.warning</group>
     </rule>
 
@@ -9249,7 +9249,7 @@
         <!-- MESGID_MIME_AVQUERY_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008205$</field>
-        <description>Fortigate: MIME data reported infected by Outbreak Prevention (notice)</description>
+        <description>Fortigate: MIME data reported infected by Outbreak Prevention (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.outbreak-prevention,fortios.severity.notice</group>
     </rule>
 
@@ -9257,7 +9257,7 @@
         <!-- MESGID_AV_EXEMPT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008206$</field>
-        <description>Fortigate: File reported matched AV exempt list (notice)</description>
+        <description>Fortigate: File reported matched AV exempt list (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.exempt-hash,fortios.severity.notice</group>
     </rule>
 
@@ -9265,7 +9265,7 @@
         <!-- MESGID_MIME_AV_EXEMPT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008207$</field>
-        <description>Fortigate: MIME data reported matched AV exempt list (notice)</description>
+        <description>Fortigate: MIME data reported matched AV exempt list (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.exempt-hash,fortios.severity.notice</group>
     </rule>
 
@@ -9273,7 +9273,7 @@
         <!-- MESGID_MALWARE_LIST_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008212$</field>
-        <description>Fortigate: File reported infected by external malware list (warning)</description>
+        <description>Fortigate: File reported infected by external malware list (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.malware-list,fortios.severity.warning</group>
     </rule>
 
@@ -9281,7 +9281,7 @@
         <!-- MESGID_MALWARE_LIST_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008213$</field>
-        <description>Fortigate: File reported infected by external malware list (notice)</description>
+        <description>Fortigate: File reported infected by external malware list (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.malware-list,fortios.severity.notice</group>
     </rule>
 
@@ -9289,7 +9289,7 @@
         <!-- MESGID_MIME_MALWARE_LIST_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008214$</field>
-        <description>Fortigate: MIME data reported infected by external malware list (warning)</description>
+        <description>Fortigate: MIME data reported infected by external malware list (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.malware-list,fortios.severity.warning</group>
     </rule>
 
@@ -9297,7 +9297,7 @@
         <!-- MESGID_MIME_MALWARE_LIST_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008215$</field>
-        <description>Fortigate: MIME data reported infected by external malware list (notice)</description>
+        <description>Fortigate: MIME data reported infected by external malware list (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.malware-list,fortios.severity.notice</group>
     </rule>
 
@@ -9305,7 +9305,7 @@
         <!-- MESGID_FILE_HASH_EMS_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008216$</field>
-        <description>Fortigate: File reported infected by EMS threat feed (warning)</description>
+        <description>Fortigate: File reported infected by EMS threat feed (warning) - $(virus) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.ems-threat-feed,fortios.severity.warning</group>
     </rule>
 
@@ -9313,7 +9313,7 @@
         <!-- MESGID_FILE_HASH_EMS_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008217$</field>
-        <description>Fortigate: File reported infected by EMS threat feed (notice)</description>
+        <description>Fortigate: File reported infected by EMS threat feed (notice) - $(virus) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.ems-threat-feed,fortios.severity.notice</group>
     </rule>
 
@@ -9321,7 +9321,7 @@
         <!-- MESGID_MIME_FILE_HASH_EMS_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008218$</field>
-        <description>Fortigate: MIME data reported infected by EMS threat feed (warning)</description>
+        <description>Fortigate: MIME data reported infected by EMS threat feed (warning) - $(virus) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.ems-threat-feed,fortios.severity.warning</group>
     </rule>
 
@@ -9329,7 +9329,7 @@
         <!-- MESGID_MIME_FILE_HASH_EMS_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008219$</field>
-        <description>Fortigate: MIME data reported infected by EMS threat feed (notice)</description>
+        <description>Fortigate: MIME data reported infected by EMS threat feed (notice) - $(virus) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.ems-threat-feed,fortios.severity.notice</group>
     </rule>
 
@@ -9337,7 +9337,7 @@
         <!-- MESGID_FAI_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008220$</field>
-        <description>Fortigate: File reported infected by FortiNDR (warning)</description>
+        <description>Fortigate: File reported infected by FortiNDR (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortindr,fortios.severity.warning</group>
     </rule>
 
@@ -9345,7 +9345,7 @@
         <!-- MESGID_FAI_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008221$</field>
-        <description>Fortigate: File reported infected by FortiNDR (notice)</description>
+        <description>Fortigate: File reported infected by FortiNDR (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortindr,fortios.severity.notice</group>
     </rule>
 
@@ -9353,7 +9353,7 @@
         <!-- MESGID_MIME_FAI_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008222$</field>
-        <description>Fortigate: MIME data reported infected by FortiNDR (warning)</description>
+        <description>Fortigate: MIME data reported infected by FortiNDR (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortindr,fortios.severity.warning</group>
     </rule>
 
@@ -9361,7 +9361,7 @@
         <!-- MESGID_MIME_FAI_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008223$</field>
-        <description>Fortigate: MIME data reported infected by FortiNDR (notice)</description>
+        <description>Fortigate: MIME data reported infected by FortiNDR (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortindr,fortios.severity.notice</group>
     </rule>
 
@@ -9369,7 +9369,7 @@
         <!-- MESGID_ICB_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008224$</field>
-        <description>Fortigate: Inline Block scan timeout (warning)</description>
+        <description>Fortigate: Inline Block scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.warning</group>
     </rule>
 
@@ -9377,7 +9377,7 @@
         <!-- MESGID_ICB_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008225$</field>
-        <description>Fortigate: Inline Block scan timeout (notice)</description>
+        <description>Fortigate: Inline Block scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.notice</group>
     </rule>
 
@@ -9385,7 +9385,7 @@
         <!-- MESGID_MIME_ICB_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008226$</field>
-        <description>Fortigate: MIME data reported Inline Block scan timeout (warning)</description>
+        <description>Fortigate: MIME data reported Inline Block scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.warning</group>
     </rule>
 
@@ -9393,7 +9393,7 @@
         <!-- MESGID_MIME_ICB_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008227$</field>
-        <description>Fortigate: MIME data reported Inline Block scan timeout (notice)</description>
+        <description>Fortigate: MIME data reported Inline Block scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.notice</group>
     </rule>
 
@@ -9401,7 +9401,7 @@
         <!-- MESGID_ICB_ERROR_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008228$</field>
-        <description>Fortigate: Inline Block scan error (warning)</description>
+        <description>Fortigate: Inline Block scan error (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.warning</group>
     </rule>
 
@@ -9409,7 +9409,7 @@
         <!-- MESGID_ICB_ERROR_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008229$</field>
-        <description>Fortigate: Inline Block scan error (notice)</description>
+        <description>Fortigate: Inline Block scan error (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.notice</group>
     </rule>
 
@@ -9417,7 +9417,7 @@
         <!-- MESGID_MIME_ICB_ERROR_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008230$</field>
-        <description>Fortigate: MIME data reported Inline Block scan error (warning)</description>
+        <description>Fortigate: MIME data reported Inline Block scan error (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.warning</group>
     </rule>
 
@@ -9425,7 +9425,7 @@
         <!-- MESGID_MIME_ICB_ERROR_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008231$</field>
-        <description>Fortigate: MIME data reported Inline Block scan error (notice)</description>
+        <description>Fortigate: MIME data reported Inline Block scan error (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.inline-block,fortios.severity.notice</group>
     </rule>
 
@@ -9433,7 +9433,7 @@
         <!-- MESGID_ICB_FSA_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008232$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (warning)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9441,7 +9441,7 @@
         <!-- MESGID_ICB_FSA_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008233$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (notice)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9449,7 +9449,7 @@
         <!-- MESGID_MIME_ICB_FSA_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008234$</field>
-        <description>Fortigate: MIME data reported infected by FortiSandbox (warning)</description>
+        <description>Fortigate: MIME data reported infected by FortiSandbox (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9457,7 +9457,7 @@
         <!-- MESGID_MIME_ICB_FSA_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008235$</field>
-        <description>Fortigate: MIME data reported infected by FortiSandbox (notice)</description>
+        <description>Fortigate: MIME data reported infected by FortiSandbox (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9465,7 +9465,7 @@
         <!-- MESGID_ICB_FSA_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008236$</field>
-        <description>Fortigate: FortiSandbox scan timeout (warning)</description>
+        <description>Fortigate: FortiSandbox scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9473,7 +9473,7 @@
         <!-- MESGID_ICB_FSA_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008237$</field>
-        <description>Fortigate: FortiSandbox scan timeout (notice)</description>
+        <description>Fortigate: FortiSandbox scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9481,7 +9481,7 @@
         <!-- MESGID_MIME_ICB_FSA_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008238$</field>
-        <description>Fortigate: MIME data reported FortiSandbox scan timeout (warning)</description>
+        <description>Fortigate: MIME data reported FortiSandbox scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9489,7 +9489,7 @@
         <!-- MESGID_MIME_ICB_FSA_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008239$</field>
-        <description>Fortigate: MIME data reported FortiSandbox scan timeout (notice)</description>
+        <description>Fortigate: MIME data reported FortiSandbox scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9497,7 +9497,7 @@
         <!-- MESGID_ICB_FSA_ERROR_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008240$</field>
-        <description>Fortigate: FortiSandbox scan error (warning)</description>
+        <description>Fortigate: FortiSandbox scan error (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9505,7 +9505,7 @@
         <!-- MESGID_ICB_FSA_ERROR_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008241$</field>
-        <description>Fortigate: FortiSandbox scan error (notice)</description>
+        <description>Fortigate: FortiSandbox scan error (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9513,7 +9513,7 @@
         <!-- MESGID_MIME_ICB_FSA_ERROR_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008242$</field>
-        <description>Fortigate: MIME data reported FortiSandbox scan error (warning)</description>
+        <description>Fortigate: MIME data reported FortiSandbox scan error (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.warning</group>
     </rule>
 
@@ -9521,7 +9521,7 @@
         <!-- MESGID_MIME_ICB_FSA_ERROR_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008243$</field>
-        <description>Fortigate: MIME data reported FortiSandbox scan error (notice)</description>
+        <description>Fortigate: MIME data reported FortiSandbox scan error (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.fortisandbox,fortios.severity.notice</group>
     </rule>
 
@@ -9529,7 +9529,7 @@
         <!-- MESGID_BLOCK_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008448$</field>
-        <description>Fortigate: FortiGate unit blocked a file because it contains a virus</description>
+        <description>Fortigate: FortiGate unit blocked a file because it contains a virus - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.filename,fortios.severity.warning</group>
     </rule>
 
@@ -9537,7 +9537,7 @@
         <!-- MESGID_BLOCK_MIME_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008450$</field>
-        <description>Fortigate: FortiGate unit blocked a file because it contains a virus (MIME)</description>
+        <description>Fortigate: FortiGate unit blocked a file because it contains a virus (MIME) - from $(from) to $(to)</description>
         <group>fortios.event.virus,fortios.category.mimefragmented,fortios.severity.warning</group>
     </rule>
 
@@ -9545,7 +9545,7 @@
         <!-- MESGID_BLOCK_MIME_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008451$</field>
-        <description>Fortigate: FortiGate unit blocked a file because it contains a virus (MIME)</description>
+        <description>Fortigate: FortiGate unit blocked a file because it contains a virus (MIME) - from $(from) to $(to)</description>
         <group>fortios.event.virus,fortios.category.mimefragmented,fortios.severity.notice</group>
     </rule>
 
@@ -9553,7 +9553,7 @@
         <!-- MESGID_BLOCK_COMMAND -->
         <if_sid>100010</if_sid>
         <field name="logid">008452$</field>
-        <description>Fortigate: FortiGate unit blocked a virus command</description>
+        <description>Fortigate: FortiGate unit blocked a virus command - $(command) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.command-blocked,fortios.severity.warning</group>
     </rule>
 
@@ -9561,7 +9561,7 @@
         <!-- MESGID_OVERSIZE_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008704$</field>
-        <description>Fortigate: Defined file size limit was exceeded</description>
+        <description>Fortigate: Defined file size limit was exceeded - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.oversize,fortios.severity.warning</group>
     </rule>
 
@@ -9569,7 +9569,7 @@
         <!-- MESGID_OVERSIZE_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008705$</field>
-        <description>Fortigate: File size limit was exceeded</description>
+        <description>Fortigate: File size limit was exceeded - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.oversize,fortios.severity.notice</group>
     </rule>
 
@@ -9577,7 +9577,7 @@
         <!-- MESGID_OVERSIZE_STREAM_UNCOMP_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008708$</field>
-        <description>Fortigate: Stream-based uncompression reached size limit.</description>
+        <description>Fortigate: Stream-based uncompression reached size limit. - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.oversize,fortios.severity.warning</group>
     </rule>
 
@@ -9585,7 +9585,7 @@
         <!-- MESGID_OVERSIZE_STREAM_UNCOMP_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008709$</field>
-        <description>Fortigate: Stream-based uncompression reached size limit.</description>
+        <description>Fortigate: Stream-based uncompression reached size limit. - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.oversize,fortios.severity.notice</group>
     </rule>
 
@@ -9593,7 +9593,7 @@
         <!-- MESGID_SWITCH_PROTO_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008720$</field>
-        <description>Fortigate: Switching protocols request (warning)</description>
+        <description>Fortigate: Switching protocols request (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.switchproto,fortios.severity.warning</group>
     </rule>
 
@@ -9601,7 +9601,7 @@
         <!-- MESGID_SWITCH_PROTO_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008721$</field>
-        <description>Fortigate: Switching protocols request (notice)</description>
+        <description>Fortigate: Switching protocols request (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.switchproto,fortios.severity.notice</group>
     </rule>
 
@@ -9609,7 +9609,7 @@
         <!-- MESGID_SCAN_UNCOMPSIZELIMIT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008960$</field>
-        <description>Fortigate: File reached the uncompressed nested limit</description>
+        <description>Fortigate: File reached the uncompressed nested limit - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9617,7 +9617,7 @@
         <!-- MESGID_SCAN_UNCOMPSIZELIMIT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008961$</field>
-        <description>Fortigate: File reached the uncompressed size limit</description>
+        <description>Fortigate: File reached the uncompressed size limit - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9625,7 +9625,7 @@
         <!-- MESGID_SCAN_ARCHIVE_ENCRYPTED_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008962$</field>
-        <description>Fortigate: Archived file is corrupted</description>
+        <description>Fortigate: Archived file is corrupted - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9633,7 +9633,7 @@
         <!-- MESGID_SCAN_ARCHIVE_ENCRYPTED_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008963$</field>
-        <description>Fortigate: Archived file is encrypted</description>
+        <description>Fortigate: Archived file is encrypted - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9641,7 +9641,7 @@
         <!-- MESGID_SCAN_ARCHIVE_CORRUPTED_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008964$</field>
-        <description>Fortigate: Corrupted archive (warning)</description>
+        <description>Fortigate: Corrupted archive (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9649,7 +9649,7 @@
         <!-- MESGID_SCAN_ARCHIVE_CORRUPTED_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008965$</field>
-        <description>Fortigate: Corrupted archive (notice)</description>
+        <description>Fortigate: Corrupted archive (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9657,7 +9657,7 @@
         <!-- MESGID_SCAN_ARCHIVE_MULTIPART_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008966$</field>
-        <description>Fortigate: File is a multipart archive or contains multiple files within the archive</description>
+        <description>Fortigate: File is a multipart archive or contains multiple files within the archive - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9665,7 +9665,7 @@
         <!-- MESGID_SCAN_ARCHIVE_MULTIPART_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008967$</field>
-        <description>Fortigate: File is a multipart archive or contains multiple files within the archive</description>
+        <description>Fortigate: File is a multipart archive or contains multiple files within the archive - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9673,7 +9673,7 @@
         <!-- MESGID_SCAN_ARCHIVE_NESTED_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008968$</field>
-        <description>Fortigate: File is a nested archived file</description>
+        <description>Fortigate: File is a nested archived file - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9681,7 +9681,7 @@
         <!-- MESGID_SCAN_ARCHIVE_NESTED_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008969$</field>
-        <description>Fortigate: File is an archived type unhandled</description>
+        <description>Fortigate: File is an archived type unhandled - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9689,7 +9689,7 @@
         <!-- MESGID_SCAN_ARCHIVE_OVERSIZE_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008970$</field>
-        <description>Fortigate: Archived file is oversized</description>
+        <description>Fortigate: Archived file is oversized - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9697,7 +9697,7 @@
         <!-- MESGID_SCAN_ARCHIVE_OVERSIZE_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008971$</field>
-        <description>Fortigate: Archived file is oversized</description>
+        <description>Fortigate: Archived file is oversized - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9705,7 +9705,7 @@
         <!-- MESGID_SCAN_ARCHIVE_UNHANDLED_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008972$</field>
-        <description>Fortigate: Unhandled archive (warning)</description>
+        <description>Fortigate: Unhandled archive (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9713,7 +9713,7 @@
         <!-- MESGID_SCAN_ARCHIVE_UNHANDLED_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008973$</field>
-        <description>Fortigate: Unhandled archive (notice)</description>
+        <description>Fortigate: Unhandled archive (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9721,7 +9721,7 @@
         <!-- MESGID_SCAN_AV_ENGINE_LOAD_FAILED_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">008974$</field>
-        <description>Fortigate: AV Engine load failed</description>
+        <description>Fortigate: AV Engine load failed - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.error</group>
     </rule>
 
@@ -9729,7 +9729,7 @@
         <!-- MESGID_SCAN_ARCHIVE_PARTIALLYCORRUPTED_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008975$</field>
-        <description>Fortigate: Partially corrupted archive (warning)</description>
+        <description>Fortigate: Partially corrupted archive (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9737,7 +9737,7 @@
         <!-- MESGID_SCAN_ARCHIVE_PARTIALLYCORRUPTED_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008976$</field>
-        <description>Fortigate: Partially corrupted archive (notice)</description>
+        <description>Fortigate: Partially corrupted archive (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9745,7 +9745,7 @@
         <!-- MESGID_SCAN_ARCHIVE_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008979$</field>
-        <description>Fortigate: Archive scan timeout (warning)</description>
+        <description>Fortigate: Archive scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -9753,7 +9753,7 @@
         <!-- MESGID_SCAN_ARCHIVE_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008980$</field>
-        <description>Fortigate: Archive scan timeout (notice)</description>
+        <description>Fortigate: Archive scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -9761,7 +9761,7 @@
         <!-- MESGID_SCAN_AV_CDR_INTERNAL_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">008981$</field>
-        <description>Fortigate: AV CDR engine internal error</description>
+        <description>Fortigate: AV CDR engine internal error - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.error</group>
     </rule>
 
@@ -9769,7 +9769,7 @@
         <!-- MESGID_ANALYTICS_SUBMITTED -->
         <if_sid>100010</if_sid>
         <field name="logid">009233$</field>
-        <description>Fortigate: File submitted to Sandbox</description>
+        <description>Fortigate: File submitted to Sandbox - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.analytics,fortios.severity.information</group>
     </rule>
 
@@ -9777,7 +9777,7 @@
         <!-- MESGID_ANALYTICS_INFECT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">009234$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (warning)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.warning</group>
     </rule>
 
@@ -9785,7 +9785,7 @@
         <!-- MESGID_ANALYTICS_INFECT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">009235$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (notice)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.notice</group>
     </rule>
 
@@ -9793,7 +9793,7 @@
         <!-- MESGID_ANALYTICS_INFECT_MIME_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">009236$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (warning)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (warning) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.warning</group>
     </rule>
 
@@ -9801,7 +9801,7 @@
         <!-- MESGID_ANALYTICS_INFECT_MIME_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">009237$</field>
-        <description>Fortigate: File reported infected by FortiSandbox (notice)</description>
+        <description>Fortigate: File reported infected by FortiSandbox (notice) - $(virus) in $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.infected,fortios.severity.notice</group>
     </rule>
 
@@ -9809,7 +9809,7 @@
         <!-- MESGID_ANALYTICS_FSA_RESULT -->
         <if_sid>100010</if_sid>
         <field name="logid">009238$</field>
-        <description>Fortigate: File verdict returned from FortiSandbox</description>
+        <description>Fortigate: File verdict returned from FortiSandbox - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.analytics,fortios.severity.notice</group>
     </rule>
 
@@ -9817,7 +9817,7 @@
         <!-- MESGID_CONTENT_DISARM_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">009239$</field>
-        <description>Fortigate: Active content detected by Content Disarm engine</description>
+        <description>Fortigate: Active content detected by Content Disarm engine - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.content-disarm,fortios.severity.notice</group>
     </rule>
 
@@ -9825,7 +9825,7 @@
         <!-- MESGID_CONTENT_DISARM_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">009240$</field>
-        <description>Fortigate: File was disarmed by Content Disarm engine</description>
+        <description>Fortigate: File was disarmed by Content Disarm engine - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.content-disarm,fortios.severity.warning</group>
     </rule>
 
@@ -9833,7 +9833,7 @@
         <!-- LOGID_EVENT_VOIP_SIP -->
         <if_sid>100010</if_sid>
         <field name="logid">044032$</field>
-        <description>Fortigate: VoIP SIP</description>
+        <description>Fortigate: VoIP SIP - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9841,7 +9841,7 @@
         <!-- LOGID_EVENT_VOIP_SIP_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">044033$</field>
-        <description>Fortigate: VoIP SIP blocked</description>
+        <description>Fortigate: VoIP SIP blocked - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.notice</group>
     </rule>
 
@@ -9849,7 +9849,7 @@
         <!-- LOGID_EVENT_VOIP_SIP_FUZZING -->
         <if_sid>100010</if_sid>
         <field name="logid">044034$</field>
-        <description>Fortigate: VoIP SIP fuzzing</description>
+        <description>Fortigate: VoIP SIP fuzzing - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9857,7 +9857,7 @@
         <!-- LOGID_EVENT_VOIP_SCCP_REGISTER -->
         <if_sid>100010</if_sid>
         <field name="logid">044035$</field>
-        <description>Fortigate: VoIP SCCP registered</description>
+        <description>Fortigate: VoIP SCCP registered - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9865,7 +9865,7 @@
         <!-- LOGID_EVENT_VOIP_SCCP_UNREGISTER -->
         <if_sid>100010</if_sid>
         <field name="logid">044036$</field>
-        <description>Fortigate: VoIP SCCP unregistered</description>
+        <description>Fortigate: VoIP SCCP unregistered - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9873,7 +9873,7 @@
         <!-- LOGID_EVENT_VOIP_SCCP_CALL_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">044037$</field>
-        <description>Fortigate: VoIP SCCP call blocked</description>
+        <description>Fortigate: VoIP SCCP call blocked - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9881,7 +9881,7 @@
         <!-- LOGID_EVENT_VOIP_SCCP_CALL_INFO -->
         <if_sid>100010</if_sid>
         <field name="logid">044038$</field>
-        <description>Fortigate: VoIP SCCP call information</description>
+        <description>Fortigate: VoIP SCCP call information - from $(srcip) to $(dstip)</description>
         <group>fortios.event.voip,fortios.category.voip,fortios.severity.information</group>
     </rule>
 
@@ -9889,7 +9889,7 @@
         <!-- LOGID_WAF_SIGNATURE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030248$</field>
-        <description>Fortigate: Web application firewall blocked application by signature</description>
+        <description>Fortigate: Web application firewall blocked application by signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-signature,fortios.severity.warning</group>
     </rule>
 
@@ -9897,7 +9897,7 @@
         <!-- LOGID_WAF_SIGNATURE_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">030249$</field>
-        <description>Fortigate: Web application firewall passed application by signature</description>
+        <description>Fortigate: Web application firewall passed application by signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-signature,fortios.severity.warning</group>
     </rule>
 
@@ -9905,7 +9905,7 @@
         <!-- LOGID_WAF_SIGNATURE_ERASE -->
         <if_sid>100010</if_sid>
         <field name="logid">030250$</field>
-        <description>Fortigate: Web application firewall erased application by signature</description>
+        <description>Fortigate: Web application firewall erased application by signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-signature,fortios.severity.warning</group>
     </rule>
 
@@ -9913,7 +9913,7 @@
         <!-- LOGID_WAF_CUSTOM_SIGNATURE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030251$</field>
-        <description>Fortigate: Web application firewall blocked application by custom signature</description>
+        <description>Fortigate: Web application firewall blocked application by custom signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-custom-signature,fortios.severity.warning</group>
     </rule>
 
@@ -9921,7 +9921,7 @@
         <!-- LOGID_WAF_CUSTOM_SIGNATURE_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">030252$</field>
-        <description>Fortigate: Web application firewall allowed application by custom signature</description>
+        <description>Fortigate: Web application firewall allowed application by custom signature - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-custom-signature,fortios.severity.warning</group>
     </rule>
 
@@ -9929,7 +9929,7 @@
         <!-- LOGID_WAF_METHOD_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030253$</field>
-        <description>Fortigate: Web application firewall blocked application by HTTP method</description>
+        <description>Fortigate: Web application firewall blocked application by HTTP method - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-http-method,fortios.severity.warning</group>
     </rule>
 
@@ -9937,7 +9937,7 @@
         <!-- LOGID_WAF_ADDRESS_LIST_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030255$</field>
-        <description>Fortigate: Web application firewall blocked application by address list</description>
+        <description>Fortigate: Web application firewall blocked application by address list - $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-address-list,fortios.severity.warning</group>
     </rule>
 
@@ -9945,7 +9945,7 @@
         <!-- LOGID_WAF_CONSTRAINTS_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030257$</field>
-        <description>Fortigate: Web application firewall blocked application by HTTP constraints</description>
+        <description>Fortigate: Web application firewall blocked application by HTTP constraints - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-http-constraint,fortios.severity.warning</group>
     </rule>
 
@@ -9953,7 +9953,7 @@
         <!-- LOGID_WAF_CONSTRAINTS_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">030258$</field>
-        <description>Fortigate: Web application firewall allowed application by HTTP constraints</description>
+        <description>Fortigate: Web application firewall allowed application by HTTP constraints - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-http-constraint,fortios.severity.warning</group>
     </rule>
 
@@ -9961,7 +9961,7 @@
         <!-- LOGID_WAF_URL_ACCESS_PERMIT -->
         <if_sid>100010</if_sid>
         <field name="logid">030259$</field>
-        <description>Fortigate: Web application firewall allowed application by URL access permit</description>
+        <description>Fortigate: Web application firewall allowed application by URL access permit - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-url-access,fortios.severity.warning</group>
     </rule>
 
@@ -9969,7 +9969,7 @@
         <!-- LOGID_WAF_URL_ACCESS_BYPASS -->
         <if_sid>100010</if_sid>
         <field name="logid">030260$</field>
-        <description>Fortigate: Web application firewall allowed application by URL access bypass</description>
+        <description>Fortigate: Web application firewall allowed application by URL access bypass - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-url-access,fortios.severity.warning</group>
     </rule>
 
@@ -9977,7 +9977,7 @@
         <!-- LOGID_WAF_URL_ACCESS_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">030261$</field>
-        <description>Fortigate: Web application firewall blocked application by URL access</description>
+        <description>Fortigate: Web application firewall blocked application by URL access - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.waf,fortios.category.waf-url-access,fortios.severity.warning</group>
     </rule>
 
@@ -9985,7 +9985,7 @@
         <!-- LOG_ID_WEB_CONTENT_BANWORD -->
         <if_sid>100010</if_sid>
         <field name="logid">012288$</field>
-        <description>Fortigate: Web content banned word found</description>
+        <description>Fortigate: Web content banned word found - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.warning</group>
     </rule>
 
@@ -9993,7 +9993,7 @@
         <!-- LOG_ID_WEB_CONTENT_EXEMPTWORD -->
         <if_sid>100010</if_sid>
         <field name="logid">012290$</field>
-        <description>Fortigate: Web content exempt word found</description>
+        <description>Fortigate: Web content exempt word found - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.notice</group>
     </rule>
 
@@ -10001,7 +10001,7 @@
         <!-- LOG_ID_WEB_CONTENT_KEYWORD -->
         <if_sid>100010</if_sid>
         <field name="logid">012292$</field>
-        <description>Fortigate: Message contained a key word in the profile list</description>
+        <description>Fortigate: Message contained a key word in the profile list - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.notice</group>
     </rule>
 
@@ -10009,7 +10009,7 @@
         <!-- LOG_ID_WEB_CONTENT_SEARCH -->
         <if_sid>100010</if_sid>
         <field name="logid">012293$</field>
-        <description>Fortigate: Search phrase detected</description>
+        <description>Fortigate: Search phrase detected - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.notice</group>
     </rule>
 
@@ -10017,7 +10017,7 @@
         <!-- LOG_ID_URL_FILTER_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">012544$</field>
-        <description>Fortigate: URL address was blocked because it was found in the URL filter list</description>
+        <description>Fortigate: URL address was blocked because it was found in the URL filter list - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.warning</group>
     </rule>
 
@@ -10025,7 +10025,7 @@
         <!-- LOG_ID_URL_FILTER_EXEMPT -->
         <if_sid>100010</if_sid>
         <field name="logid">012545$</field>
-        <description>Fortigate: URL address was exempted because it was found in the URL filter list</description>
+        <description>Fortigate: URL address was exempted because it was found in the URL filter list - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10033,7 +10033,7 @@
         <!-- LOG_ID_URL_FILTER_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">012546$</field>
-        <description>Fortigate: URL address was allowed because it was found in the URL filter list</description>
+        <description>Fortigate: URL address was allowed because it was found in the URL filter list - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10041,7 +10041,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_HTTP_BLK -->
         <if_sid>100010</if_sid>
         <field name="logid">012547$</field>
-        <description>Fortigate: The request contained an invalid domain name</description>
+        <description>Fortigate: The request contained an invalid domain name - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10049,7 +10049,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_HTTPS_BLK -->
         <if_sid>100010</if_sid>
         <field name="logid">012548$</field>
-        <description>Fortigate: HTTP certificate request contained an invalid domain name</description>
+        <description>Fortigate: HTTP certificate request contained an invalid domain name - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10057,7 +10057,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_HTTP_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">012549$</field>
-        <description>Fortigate: HTTP request contained an invalid name so the session has been filtered by IP only</description>
+        <description>Fortigate: HTTP request contained an invalid name so the session has been filtered by IP only - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10065,7 +10065,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_HTTPS_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">012550$</field>
-        <description>Fortigate: HTTPS request contained an invalid name so the session has been filtered by IP only</description>
+        <description>Fortigate: HTTPS request contained an invalid name so the session has been filtered by IP only - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10073,7 +10073,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_SNI_BLK -->
         <if_sid>100010</if_sid>
         <field name="logid">012551$</field>
-        <description>Fortigate: Insufficient resources</description>
+        <description>Fortigate: Insufficient resources - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10081,7 +10081,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_HOSTNAME_SNI_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">012552$</field>
-        <description>Fortigate: Getting the host name failed</description>
+        <description>Fortigate: Getting the host name failed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10089,7 +10089,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_CERT -->
         <if_sid>100010</if_sid>
         <field name="logid">012553$</field>
-        <description>Fortigate: Server certificate validation failed</description>
+        <description>Fortigate: Server certificate validation failed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10097,7 +10097,7 @@
         <!-- LOG_ID_URL_FILTER_INVALID_SESSION -->
         <if_sid>100010</if_sid>
         <field name="logid">012554$</field>
-        <description>Fortigate: SSL session blocked because its identification number was unknown</description>
+        <description>Fortigate: SSL session blocked because its identification number was unknown - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10105,7 +10105,7 @@
         <!-- LOG_ID_URL_FILTER_SRV_CERT_ERR_BLK -->
         <if_sid>100010</if_sid>
         <field name="logid">012555$</field>
-        <description>Fortigate: SSL session blocked</description>
+        <description>Fortigate: SSL session blocked - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10113,7 +10113,7 @@
         <!-- LOG_ID_URL_FILTER_SRV_CERT_ERR_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">012556$</field>
-        <description>Fortigate: SSL session ignored</description>
+        <description>Fortigate: SSL session ignored - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10121,7 +10121,7 @@
         <!-- LOG_ID_URL_FILTER_FAMS_NOT_ACTIVE -->
         <if_sid>100010</if_sid>
         <field name="logid">012557$</field>
-        <description>Fortigate: The FortiGuard Analysis and Management Service is not active. You must enable this service</description>
+        <description>Fortigate: The FortiGuard Analysis and Management Service is not active. You must enable this service - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.critical</group>
     </rule>
 
@@ -10129,7 +10129,7 @@
         <!-- LOG_ID_URL_FILTER_RATING_ERR -->
         <if_sid>100010</if_sid>
         <field name="logid">012558$</field>
-        <description>Fortigate: Rating error occurred</description>
+        <description>Fortigate: Rating error occurred - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10137,7 +10137,7 @@
         <!-- LOG_ID_URL_FILTER_PASS -->
         <if_sid>100010</if_sid>
         <field name="logid">012559$</field>
-        <description>Fortigate: URL passed because it was in the URL filter list</description>
+        <description>Fortigate: URL passed because it was in the URL filter list - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10145,7 +10145,7 @@
         <!-- LOG_ID_URL_WISP_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">012560$</field>
-        <description>Fortigate: URL blocked by Websense service</description>
+        <description>Fortigate: URL blocked by Websense service - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.warning</group>
     </rule>
 
@@ -10153,7 +10153,7 @@
         <!-- LOG_ID_URL_WISP_REDIR -->
         <if_sid>100010</if_sid>
         <field name="logid">012561$</field>
-        <description>Fortigate: URL blocked with redirect message by Websense service</description>
+        <description>Fortigate: URL blocked with redirect message by Websense service - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.warning</group>
     </rule>
 
@@ -10161,7 +10161,7 @@
         <!-- LOG_ID_URL_WISP_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">012562$</field>
-        <description>Fortigate: URL allowed by Websense service</description>
+        <description>Fortigate: URL allowed by Websense service - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlfilter,fortios.severity.information</group>
     </rule>
 
@@ -10169,7 +10169,7 @@
         <!-- LOG_ID_WEB_SSL_EXEMPT -->
         <if_sid>100010</if_sid>
         <field name="logid">012688$</field>
-        <description>Fortigate: URL address was exempted because it was found in the ssl-exempt</description>
+        <description>Fortigate: URL address was exempted because it was found in the ssl-exempt - from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ssl-exempt,fortios.severity.information</group>
     </rule>
 
@@ -10177,7 +10177,7 @@
         <!-- LOG_ID_WEB_FTGD_ERR -->
         <if_sid>100010</if_sid>
         <field name="logid">012800$</field>
-        <description>Fortigate: Rating error occurred (error)</description>
+        <description>Fortigate: Rating error occurred (error) - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_err,fortios.severity.error</group>
     </rule>
 
@@ -10185,7 +10185,7 @@
         <!-- LOG_ID_WEB_FTGD_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">012801$</field>
-        <description>Fortigate: Rating error occurred (warning)</description>
+        <description>Fortigate: Rating error occurred (warning) - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_err,fortios.severity.warning</group>
     </rule>
 
@@ -10193,7 +10193,7 @@
         <!-- LOG_ID_WEB_FTGD_QUOTA -->
         <if_sid>100010</if_sid>
         <field name="logid">012802$</field>
-        <description>Fortigate: Daily FortiGuard quota status</description>
+        <description>Fortigate: Daily FortiGuard quota status - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_quota,fortios.severity.information</group>
     </rule>
 
@@ -10201,7 +10201,7 @@
         <!-- LOG_ID_WEB_FTGD_CAT_BLK -->
         <if_sid>100010</if_sid>
         <field name="logid">013056$</field>
-        <description>Fortigate: URL belongs to an blocked category within the firewall policy</description>
+        <description>Fortigate: URL belongs to an blocked category within the firewall policy - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_blk,fortios.severity.warning</group>
     </rule>
 
@@ -10209,7 +10209,7 @@
         <!-- LOG_ID_WEB_FTGD_CAT_WARN -->
         <if_sid>100010</if_sid>
         <field name="logid">013057$</field>
-        <description>Fortigate: URL belongs to a category with warnings enabled</description>
+        <description>Fortigate: URL belongs to a category with warnings enabled - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_blk,fortios.severity.warning</group>
     </rule>
 
@@ -10217,7 +10217,7 @@
         <!-- LOG_ID_WEB_FTGD_CAT_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013312$</field>
-        <description>Fortigate: URL belongs to an allowed category within the firewall policy</description>
+        <description>Fortigate: URL belongs to an allowed category within the firewall policy - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_allow,fortios.severity.notice</group>
     </rule>
 
@@ -10225,7 +10225,7 @@
         <!-- LOG_ID_WEB_FTGD_QUOTA_COUNTING -->
         <if_sid>100010</if_sid>
         <field name="logid">013315$</field>
-        <description>Fortigate: FortiGuard web filter category quota counting log message</description>
+        <description>Fortigate: FortiGuard web filter category quota counting log message - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_quota_counting,fortios.severity.notice</group>
     </rule>
 
@@ -10233,7 +10233,7 @@
         <!-- LOG_ID_WEB_FTGD_QUOTA_EXPIRED -->
         <if_sid>100010</if_sid>
         <field name="logid">013316$</field>
-        <description>Fortigate: FortiGuard web filter category quota expired log message</description>
+        <description>Fortigate: FortiGuard web filter category quota expired log message - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.ftgd_quota_expired,fortios.severity.warning</group>
     </rule>
 
@@ -10241,7 +10241,7 @@
         <!-- LOG_ID_WEB_URL -->
         <if_sid>100010</if_sid>
         <field name="logid">013317$</field>
-        <description>Fortigate: URL has been visited</description>
+        <description>Fortigate: URL has been visited - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.urlmonitor,fortios.severity.notice</group>
     </rule>
 
@@ -10249,7 +10249,7 @@
         <!-- LOG_ID_WEB_SCRIPTFILTER_ACTIVEX -->
         <if_sid>100010</if_sid>
         <field name="logid">013568$</field>
-        <description>Fortigate: ActiveX script removed</description>
+        <description>Fortigate: ActiveX script removed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.activexfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10257,7 +10257,7 @@
         <!-- LOG_ID_WEB_SCRIPTFILTER_COOKIE -->
         <if_sid>100010</if_sid>
         <field name="logid">013573$</field>
-        <description>Fortigate: Cookie removed</description>
+        <description>Fortigate: Cookie removed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.cookiefilter,fortios.severity.notice</group>
     </rule>
 
@@ -10265,7 +10265,7 @@
         <!-- LOG_ID_WEB_SCRIPTFILTER_APPLET -->
         <if_sid>100010</if_sid>
         <field name="logid">013584$</field>
-        <description>Fortigate: Java applet removed</description>
+        <description>Fortigate: Java applet removed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.appletfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10273,7 +10273,7 @@
         <!-- LOG_ID_WEB_SCRIPTFILTER_OTHER -->
         <if_sid>100010</if_sid>
         <field name="logid">013600$</field>
-        <description>Fortigate: Script entity removed</description>
+        <description>Fortigate: Script entity removed - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.scriptfilter,fortios.severity.notice</group>
     </rule>
 
@@ -10281,7 +10281,7 @@
         <!-- LOG_ID_WEB_WF_COOKIE -->
         <if_sid>100010</if_sid>
         <field name="logid">013601$</field>
-        <description>Fortigate: Cookie removed entirely</description>
+        <description>Fortigate: Cookie removed entirely - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.cookiefilter,fortios.severity.notice</group>
     </rule>
 
@@ -10289,7 +10289,7 @@
         <!-- LOG_ID_WEB_WF_REFERER -->
         <if_sid>100010</if_sid>
         <field name="logid">013602$</field>
-        <description>Fortigate: Referrer removed from request</description>
+        <description>Fortigate: Referrer removed from request - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.cookiefilter,fortios.severity.notice</group>
     </rule>
 
@@ -10297,7 +10297,7 @@
         <!-- LOG_ID_WEB_WF_COMMAND_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013603$</field>
-        <description>Fortigate: Command blocked</description>
+        <description>Fortigate: Command blocked - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.webfilter_command_block,fortios.severity.warning</group>
     </rule>
 
@@ -10305,7 +10305,7 @@
         <!-- LOG_ID_CONTENT_TYPE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013616$</field>
-        <description>Fortigate: Blocked by HTTP header content type</description>
+        <description>Fortigate: Blocked by HTTP header content type - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.warning</group>
     </rule>
 
@@ -10313,7 +10313,7 @@
         <!-- LOGID_HTTP_HDR_CHG_REQ -->
         <if_sid>100010</if_sid>
         <field name="logid">013632$</field>
-        <description>Fortigate: Depends on info in msg field</description>
+        <description>Fortigate: Depends on info in msg field - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.http_header_change,fortios.severity.notice</group>
     </rule>
 
@@ -10321,7 +10321,7 @@
         <!-- LOGID_HTTP_HDR_CHG_RESP -->
         <if_sid>100010</if_sid>
         <field name="logid">013633$</field>
-        <description>Fortigate: Depends on info in msg field</description>
+        <description>Fortigate: Depends on info in msg field - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.http_header_change,fortios.severity.notice</group>
     </rule>
 
@@ -10329,7 +10329,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_URL_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013648$</field>
-        <description>Fortigate: Antiphishing matched a URL filter rule without blocking the request.</description>
+        <description>Fortigate: Antiphishing matched a URL filter rule without blocking the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10337,7 +10337,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_FTGD_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013649$</field>
-        <description>Fortigate: Antiphishing matched a Fortiguard category rule without blocking the request.</description>
+        <description>Fortigate: Antiphishing matched a Fortiguard category rule without blocking the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10345,7 +10345,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_DEFAULT_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013650$</field>
-        <description>Fortigate: Antiphishing reached default action without blocking the request.</description>
+        <description>Fortigate: Antiphishing reached default action without blocking the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10353,7 +10353,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_URL_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013651$</field>
-        <description>Fortigate: Antiphishing matched a URL filter rule and blocked the request.</description>
+        <description>Fortigate: Antiphishing matched a URL filter rule and blocked the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10361,7 +10361,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_FTGD_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013652$</field>
-        <description>Fortigate: Antiphishing matched a Fortiguard category rule and blocked the request.</description>
+        <description>Fortigate: Antiphishing matched a Fortiguard category rule and blocked the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10369,7 +10369,7 @@
         <!-- LOG_ID_WEB_WF_ANTIPHISH_MATCH_DEFAULT_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013653$</field>
-        <description>Fortigate: Antiphishing reached default action and blocked the request.</description>
+        <description>Fortigate: Antiphishing reached default action and blocked the request. - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.antiphishing,fortios.severity.warning</group>
     </rule>
 
@@ -10377,7 +10377,7 @@
         <!-- LOG_ID_VIDEOFILTER_CATEGORY_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013664$</field>
-        <description>Fortigate: Video category is blocked.</description>
+        <description>Fortigate: Video category is blocked. - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-category,fortios.severity.warning</group>
     </rule>
 
@@ -10385,7 +10385,7 @@
         <!-- LOG_ID_VIDEOFILTER_CATEGORY_MONITOR -->
         <if_sid>100010</if_sid>
         <field name="logid">013665$</field>
-        <description>Fortigate: Video category is monitored</description>
+        <description>Fortigate: Video category is monitored - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-category,fortios.severity.notice</group>
     </rule>
 
@@ -10393,7 +10393,7 @@
         <!-- LOG_ID_VIDEOFILTER_CATEGORY_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013666$</field>
-        <description>Fortigate: Video category is allowed</description>
+        <description>Fortigate: Video category is allowed - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-category,fortios.severity.notice</group>
     </rule>
 
@@ -10401,7 +10401,7 @@
         <!-- LOG_ID_VIDEOFILTER_CHANNEL_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013680$</field>
-        <description>Fortigate: Video channel is blocked.</description>
+        <description>Fortigate: Video channel is blocked. - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-channel,fortios.severity.warning</group>
     </rule>
 
@@ -10409,7 +10409,7 @@
         <!-- LOG_ID_VIDEOFILTER_CHANNEL_MONITOR -->
         <if_sid>100010</if_sid>
         <field name="logid">013681$</field>
-        <description>Fortigate: Video channel is monitored</description>
+        <description>Fortigate: Video channel is monitored - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-channel,fortios.severity.notice</group>
     </rule>
 
@@ -10417,7 +10417,7 @@
         <!-- LOG_ID_VIDEOFILTER_CHANNEL_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013682$</field>
-        <description>Fortigate: Video channel is allowed</description>
+        <description>Fortigate: Video channel is allowed - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-channel,fortios.severity.notice</group>
     </rule>
 
@@ -10425,7 +10425,7 @@
         <!-- LOG_ID_UNKNOWN_CE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013696$</field>
-        <description>Fortigate: Unknown content-encoding detected and blocked.</description>
+        <description>Fortigate: Unknown content-encoding detected and blocked. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.unknown-ce,fortios.severity.warning</group>
     </rule>
 
@@ -10433,7 +10433,7 @@
         <!-- LOG_ID_UNKNOWN_CE_BYPASS -->
         <if_sid>100010</if_sid>
         <field name="logid">013697$</field>
-        <description>Fortigate: Scan is bypassed due to unknown content-encoding.</description>
+        <description>Fortigate: Scan is bypassed due to unknown content-encoding. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.unknown-ce,fortios.severity.notice</group>
     </rule>
 
@@ -10457,7 +10457,7 @@
         <!-- LOG_ID_CASB_ACCESS_BLOCKED -->
         <if_sid>100010</if_sid>
         <field name="logid">010000$</field>
-        <description>Fortigate: Web content banned activity found</description>
+        <description>Fortigate: Web content banned activity found - $(casb) from $(srcip) to $(dstip)</description>
         <group>fortios.event.casb,fortios.category.casb,fortios.severity.warning</group>
     </rule>
 
@@ -10465,7 +10465,7 @@
         <!-- LOG_ID_CASB_ACCESS_BYPASS -->
         <if_sid>100010</if_sid>
         <field name="logid">010001$</field>
-        <description>Fortigate: Web content activity found</description>
+        <description>Fortigate: Web content activity found - $(casb) from $(srcip) to $(dstip)</description>
         <group>fortios.event.casb,fortios.category.casb,fortios.severity.information</group>
     </rule>
 
@@ -10473,7 +10473,7 @@
         <!-- LOG_ID_CASB_ACCESS_MONITOR -->
         <if_sid>100010</if_sid>
         <field name="logid">010002$</field>
-        <description>Fortigate: Web content activity found</description>
+        <description>Fortigate: Web content activity found - $(casb) from $(srcip) to $(dstip)</description>
         <group>fortios.event.casb,fortios.category.casb,fortios.severity.information</group>
     </rule>
 
@@ -10785,7 +10785,7 @@
         <!-- LOG_ID_SSL_ANOMALY_HANDSHAKE_FAILURE -->
         <if_sid>100010</if_sid>
         <field name="logid">062308$</field>
-        <description>Fortigate: Error occurred during SSL handshake.</description>
+        <description>Fortigate: Error occurred during SSL handshake. - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.information</group>
     </rule>
 
@@ -10793,7 +10793,7 @@
         <!-- LOG_ID_SSL_ANOMALY_CERT_INVALID -->
         <if_sid>100010</if_sid>
         <field name="logid">062309$</field>
-        <description>Fortigate: Server certificate has security problem</description>
+        <description>Fortigate: Server certificate has security problem - from $(srcip) to $(dstip)</description>
         <group>fortios.event.ssl,fortios.category.ssl-anomaly,fortios.severity.notice</group>
     </rule>
 
@@ -10801,7 +10801,7 @@
         <!-- LOG_ID_OT_VPATCH_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">064600$</field>
-        <description>Fortigate: Traffic was blocked by OT virtual patch</description>
+        <description>Fortigate: Traffic was blocked by OT virtual patch - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virtual-patch,fortios.category.ot-vpatch,fortios.severity.warning</group>
     </rule>
 
@@ -10809,7 +10809,7 @@
         <!-- LOG_ID_OT_VPATCH_LOG -->
         <if_sid>100010</if_sid>
         <field name="logid">064601$</field>
-        <description>Fortigate: Traffic was detected by OT virtual patch</description>
+        <description>Fortigate: Traffic was detected by OT virtual patch - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virtual-patch,fortios.category.ot-vpatch,fortios.severity.notice</group>
     </rule>
 
@@ -10817,7 +10817,7 @@
         <!-- LOG_ID_LOCALIN_VPATCH_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">064610$</field>
-        <description>Fortigate: Traffic was blocked by local-in virtual patch</description>
+        <description>Fortigate: Traffic was blocked by local-in virtual patch - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virtual-patch,fortios.category.localin-vpatch,fortios.severity.warning</group>
     </rule>
 
@@ -10825,7 +10825,7 @@
         <!-- LOG_ID_LOCALIN_VPATCH_LOG -->
         <if_sid>100010</if_sid>
         <field name="logid">064611$</field>
-        <description>Fortigate: Traffic was detected by local-in virtual patch</description>
+        <description>Fortigate: Traffic was detected by local-in virtual patch - $(attack) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virtual-patch,fortios.category.localin-vpatch,fortios.severity.notice</group>
     </rule>
 
@@ -10833,7 +10833,7 @@
         <!-- MESGID_SCAN_AV_MAX_MEMORY_REACHED_ERROR -->
         <if_sid>100010</if_sid>
         <field name="logid">008982$</field>
-        <description>Fortigate: Exceeded max AV memory</description>
+        <description>Fortigate: Exceeded max AV memory - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.error</group>
     </rule>
 
@@ -10841,7 +10841,7 @@
         <!-- LOG_ID_CONTENT_TYPE_EXEMPT -->
         <if_sid>100010</if_sid>
         <field name="logid">013617$</field>
-        <description>Fortigate: Exempted by HTTP header content type</description>
+        <description>Fortigate: Exempted by HTTP header content type - $(hostname)$(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.content,fortios.severity.information</group>
     </rule>
 
@@ -10849,7 +10849,7 @@
         <!-- LOG_ID_VIDEOFILTER_TITLE_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013712$</field>
-        <description>Fortigate: Video title is blocked.</description>
+        <description>Fortigate: Video title is blocked. - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-title,fortios.severity.warning</group>
     </rule>
 
@@ -10857,7 +10857,7 @@
         <!-- LOG_ID_VIDEOFILTER_TITLE_MONITOR -->
         <if_sid>100010</if_sid>
         <field name="logid">013713$</field>
-        <description>Fortigate: Video title is monitored</description>
+        <description>Fortigate: Video title is monitored - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-title,fortios.severity.notice</group>
     </rule>
 
@@ -10865,7 +10865,7 @@
         <!-- LOG_ID_VIDEOFILTER_TITLE_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013714$</field>
-        <description>Fortigate: Video title is allowed</description>
+        <description>Fortigate: Video title is allowed - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-title,fortios.severity.notice</group>
     </rule>
 
@@ -10873,7 +10873,7 @@
         <!-- LOG_ID_VIDEOFILTER_DESCRIPTION_BLOCK -->
         <if_sid>100010</if_sid>
         <field name="logid">013728$</field>
-        <description>Fortigate: Video description is blocked.</description>
+        <description>Fortigate: Video description is blocked. - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-description,fortios.severity.warning</group>
     </rule>
 
@@ -10881,7 +10881,7 @@
         <!-- LOG_ID_VIDEOFILTER_DESCRIPTION_MONITOR -->
         <if_sid>100010</if_sid>
         <field name="logid">013729$</field>
-        <description>Fortigate: Video description is monitored</description>
+        <description>Fortigate: Video description is monitored - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-description,fortios.severity.notice</group>
     </rule>
 
@@ -10889,7 +10889,7 @@
         <!-- LOG_ID_VIDEOFILTER_DESCRIPTION_ALLOW -->
         <if_sid>100010</if_sid>
         <field name="logid">013730$</field>
-        <description>Fortigate: Video description is allowed</description>
+        <description>Fortigate: Video description is allowed - $(url) from $(srcip) to $(dstip)</description>
         <group>fortios.event.webfilter,fortios.category.videofilter-description,fortios.severity.notice</group>
     </rule>
 
@@ -11073,7 +11073,7 @@
         <!-- MESGID_FORTIAI_FAILURE_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008983$</field>
-        <description>Fortigate: FortiNDR submission failure (warning)</description>
+        <description>Fortigate: FortiNDR submission failure (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -11081,7 +11081,7 @@
         <!-- MESGID_FORTIAI_FAILURE_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008984$</field>
-        <description>Fortigate: FortiNDR submission failure (notice)</description>
+        <description>Fortigate: FortiNDR submission failure (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -11089,7 +11089,7 @@
         <!-- MESGID_FORTIAI_TIMEOUT_WARNING -->
         <if_sid>100010</if_sid>
         <field name="logid">008985$</field>
-        <description>Fortigate: FortiNDR scan timeout (warning)</description>
+        <description>Fortigate: FortiNDR scan timeout (warning) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.warning</group>
     </rule>
 
@@ -11097,7 +11097,7 @@
         <!-- MESGID_FORTIAI_TIMEOUT_NOTIF -->
         <if_sid>100010</if_sid>
         <field name="logid">008986$</field>
-        <description>Fortigate: FortiNDR scan timeout (notice)</description>
+        <description>Fortigate: FortiNDR scan timeout (notice) - $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.virus,fortios.category.scanerror,fortios.severity.notice</group>
     </rule>
 
@@ -11107,7 +11107,7 @@
         <!-- LOGID_APP_CTRL_DETECT_L2 (FortiOS 8.0.0+) -->
         <if_sid>100010</if_sid>
         <field name="logid">028738$</field>
-        <description>Fortigate: Application control Layer 2 protocol detected</description>
+        <description>Fortigate: Application control Layer 2 protocol detected - $(app) from $(srcip) to $(dstip)</description>
         <group>fortios.event.app-ctrl,fortios.category.signature,fortios.severity.warning</group>
     </rule>
 
@@ -11115,7 +11115,7 @@
         <!-- LOG_ID_DLP_FORTIDATA_ERROR_NOTIF (FortiOS 8.0.0+) -->
         <if_sid>100010</if_sid>
         <field name="logid">024580$</field>
-        <description>Fortigate: DLP FortiData service error (notification)</description>
+        <description>Fortigate: DLP FortiData service error (notification) - profile $(profile): $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.error</group>
     </rule>
 
@@ -11123,7 +11123,7 @@
         <!-- LOG_ID_DLP_FORTIDATA_ERROR_WARNING (FortiOS 8.0.0+) -->
         <if_sid>100010</if_sid>
         <field name="logid">024581$</field>
-        <description>Fortigate: DLP FortiData service error (warning)</description>
+        <description>Fortigate: DLP FortiData service error (warning) - profile $(profile): $(filename) from $(srcip) to $(dstip)</description>
         <group>fortios.event.dlp,fortios.category.dlp,fortios.severity.warning</group>
     </rule>
 
@@ -11131,7 +11131,7 @@
         <!-- LOG_ID_DNS_SVCPARAM_ECH (FortiOS 8.0.0+) -->
         <if_sid>100010</if_sid>
         <field name="logid">054806$</field>
-        <description>Fortigate: DNS SVCPARAM ECH record queried</description>
+        <description>Fortigate: DNS SVCPARAM ECH record queried - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-query,fortios.severity.information</group>
     </rule>
 
@@ -11139,7 +11139,7 @@
         <!-- LOG_ID_DNS_NXDOMAIN_PASS (FortiOS 8.0.0+) -->
         <if_sid>100010</if_sid>
         <field name="logid">054807$</field>
-        <description>Fortigate: DNS NXDOMAIN response passed</description>
+        <description>Fortigate: DNS NXDOMAIN response passed - $(hostname) queried by $(srcip)</description>
         <group>fortios.event.dns,fortios.category.dns-response,fortios.severity.notice</group>
     </rule>
 

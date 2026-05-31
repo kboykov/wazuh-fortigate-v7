@@ -18,6 +18,8 @@ Covers all major FortiGate log categories — traffic, IPS, AV, application cont
 - [Rule Architecture](#rule-architecture)
 - [Alert Level Mapping](#alert-level-mapping)
 - [Log Categories and Groups](#log-categories-and-groups)
+- [Authentication Detection](#authentication-detection)
+- [Frequency and Correlation Rules](#frequency-and-correlation-rules)
 - [Log ID Structure](#log-id-structure)
 - [Covered Log IDs](#covered-log-ids)
 - [FortiOS Version Compatibility](#fortios-version-compatibility)
@@ -31,9 +33,11 @@ Covers all major FortiGate log categories — traffic, IPS, AV, application cont
 FortiGate firewalls emit structured key=value logs across dozens of event types. This project provides:
 
 - **738 decoders** — extract every FortiGate log field into named Wazuh fields
-- **1393 rules** — match specific FortiGate log IDs and assign alert levels proportional to severity
+- **1403 rules** — match specific FortiGate log IDs and assign alert levels proportional to severity
 
-Built against the **FortiOS 7.0, 7.2, and 7.4 Log Reference**, cross-validated against FortiOS 7.4.4 and 8.0.0 documentation. FortiOS 8.0.0 introduced 6 new log IDs which are covered by rules 101397–101402.
+Built against the **FortiOS 7.0, 7.2, and 7.4 Log Reference**, cross-validated against FortiOS 7.4.4 and 8.0.0 documentation. FortiOS 8.0.0 introduced 6 new log IDs which are covered by rules 101397–101402. Rules 101403–101412 provide frequency-based brute-force detection and correlation across authentication events.
+
+All rule descriptions are prefixed with `Fortigate:` for consistent identification in dashboards, email alerts, and SIEM integrations.
 
 ---
 
@@ -66,11 +70,11 @@ fortinet-fortigate-fields-v7  ← 737 child decoders (one per field)
        │
        │  each extracts one field: action, srcip, dstip, logid, etc.
        ▼
-Wazuh Rules (100010 → 100010–101396)
+Wazuh Rules (100010 → 100010–101412)
        │
        │  match decoded logid field against known FortiGate log IDs
        ▼
-Wazuh Alert (level 3–12 based on severity)
+Wazuh Alert (level 3–15 based on severity)
 ```
 
 FortiGate logs in raw syslog format look like:
@@ -188,8 +192,8 @@ Paste a sample FortiGate log line and verify the decoder and rule fire correctly
 **Phase 3: Completed filtering (rules).
         id: '100365'
         level: '10'
-        description: 'Admin login failed'
-        groups: ['fortigate', 'fortios.event.event', 'fortios.category.system', 'fortios.severity.alert']
+        description: 'Fortigate: Admin login failed'
+        groups: ['fortigate', 'fortios.event.event', 'fortios.category.system', 'fortios.severity.alert', 'authentication_failed']
 ```
 
 ### 5. Restart Wazuh Manager
@@ -205,7 +209,7 @@ systemctl restart wazuh-manager
 | File | Description |
 |---|---|
 | `0100-fortigate_decoders.xml` | All 738 FortiGate decoders |
-| `0391-fortigate_rules.xml` | All 1393 FortiGate rules (rules 101397–101402 cover FortiOS 8.0.0 additions) |
+| `0391-fortigate_rules.xml` | All 1403 FortiGate rules (101397–101402: FortiOS 8.0.0 additions; 101403–101412: frequency and correlation rules) |
 
 The file numbering follows Wazuh convention: decoders below `0500` load before most built-in decoders; rules in the `100000+` range are the custom rule space.
 
@@ -258,7 +262,7 @@ In Wazuh's OSdec regex engine, `\.` matches any single character. Each alternati
 ```xml
 <rule id="100010" level="4">
     <decoded_as>fortinet-fortigate-firewall</decoded_as>
-    <description>Fortigate messages grouped</description>
+    <description>Fortigate: Fortigate messages grouped</description>
 </rule>
 ```
 
@@ -272,8 +276,8 @@ Rules match the decoded `logid` field using a trailing `$` anchor against the 6-
 <rule id="100365" level="10">
     <if_sid>100010</if_sid>
     <field name="logid">032002$</field>
-    <description>Admin login failed</description>
-    <group>fortios.event.event,fortios.category.system,fortios.severity.alert</group>
+    <description>Fortigate: Admin login failed</description>
+    <group>fortios.event.event,fortios.category.system,fortios.severity.alert,authentication_failed</group>
 </rule>
 ```
 
@@ -293,6 +297,7 @@ Wazuh alert levels are assigned based on the FortiGate severity embedded in the 
 | `error` | 8 | Functional errors |
 | `critical` / `alert` | 10 | Security or operational incidents |
 | `emergency` | 12 | Critical system failure |
+| Frequency/correlation | 12–15 | Brute-force, credential spray, post-compromise |
 
 > Wazuh's default alert threshold is **level 7**. Events at level 3 and 4 are indexed but do not generate alerts unless the threshold is lowered. Adjust `<alert_level>` in `ossec.conf` to change this.
 
@@ -306,11 +311,14 @@ Wazuh alert levels are assigned based on the FortiGate severity embedded in the 
 | 100365 | `032002$` | Admin login failed | 10 |
 | 100380 | `032021$` | Admin login disabled | 10 |
 | 100417 | `032102$` | Configuration changed | 10 |
+| 100671 | `039426$` | SSL VPN login fail | 10 |
 | 101101 | `016384$` | IPS signature attack (TCP/UDP) | 10 |
 | 101102 | `016385$` | IPS signature attack (ICMP) | 10 |
 | 100377 | `032018$` | FIPS CC entered error mode | 12 |
-| 100391 | `032032$` | DLP archive full | 12 |
-| 100392 | `032033$` | Quarantine disk full | 12 |
+| 101403 | — | Brute-force on management (5 failures / 120 s, same IP) | 14 |
+| 101404 | — | Brute-force on SSL VPN (5 failures / 120 s, same IP) | 14 |
+| 101407 | — | Admin login success after brute-force burst (same IP) | 15 |
+| 101408 | — | SSL VPN login success after brute-force burst (same IP) | 15 |
 
 ---
 
@@ -337,6 +345,64 @@ Each rule assigns Wazuh groups in the format `fortios.event.<type>,fortios.categ
 | Debug | `fortios.event.debug` | debug-print *(8.0.0+)* |
 
 These groups can be used in Wazuh to build dashboards, filters, and integrations (e.g., send all `fortios.event.ips` events to a SIEM or ticketing system).
+
+---
+
+## Authentication Detection
+
+Authentication-related rules carry standard Wazuh authentication groups so they integrate cleanly with Wazuh's built-in dashboards, PCI DSS compliance reports, and third-party SIEM correlations.
+
+### authentication_success group
+
+| Rule ID | Log ID | Description |
+|---|---|---|
+| 100364 | `032001` | Admin login successful |
+| 100352 | `029002` | PPP authentication successful |
+| 100669 | `039424` | SSL VPN tunnel up (user authenticated) |
+| 100736 | `043008` | Authentication success (general) |
+| 100742 | `043016` | NTLM authentication successful |
+| 100745 | `043020` | FortiGuard override successful |
+| 100746 | `043025` | Explicit proxy authentication successful |
+| 100750 | `043029` | FortiGuard authentication override successful |
+| 100763 | `043045` | 802.1x authentication succeeded |
+
+### authentication_failed group
+
+| Rule ID | Log ID | Description |
+|---|---|---|
+| 100365 | `032002` | Admin login failed |
+| 100353 | `029003` | PPP authentication failed |
+| 100671 | `039426` | SSL VPN login fail |
+| 100737 | `043009` | Authentication failed (general) |
+| 100738 | `043010` | Authentication lockout |
+| 100743 | `043017` | NTLM authentication failed |
+| 100744 | `043018` | FortiGuard override failed |
+| 100747 | `043026` | Explicit proxy authentication failed |
+| 100751 | `043030` | FortiGuard authentication override failed |
+| 100764 | `043046` | 802.1x authentication failed |
+
+---
+
+## Frequency and Correlation Rules
+
+Rules 101403–101412 use Wazuh's `<frequency>` and `<timeframe>` attributes to detect brute-force attacks, credential spraying, and post-compromise login patterns across management and VPN authentication events.
+
+| Rule ID | Level | Type | Trigger |
+|---|---|---|---|
+| 101403 | 14 | Frequency | 5 admin login failures from the **same source IP** within 120 s |
+| 101404 | 14 | Frequency | 5 SSL VPN login failures from the **same source IP** within 120 s |
+| 101405 | 14 | Frequency | 10 general auth failures from the **same source IP** within 120 s |
+| 101406 | 14 | Frequency | 5 admin failures targeting **different usernames** from same IP — credential stuffing |
+| 101407 | 15 | Correlation | Admin login **success** observed after rule 101403 fires (same IP) — possible successful brute-force |
+| 101408 | 15 | Correlation | SSL VPN login **success** observed after rule 101404 fires (same IP) — possible successful brute-force |
+| 101409 | 13 | Frequency | 3+ authentication lockouts within 60 s — lockout storm / coordinated attack |
+| 101410 | 14 | Frequency | 8 admin failures from **different source IPs** within 120 s — distributed credential spray |
+| 101411 | 14 | Frequency | 8 SSL VPN failures from **different source IPs** within 120 s — distributed VPN attack |
+| 101412 | 12 | Frequency | 5 rapid admin login successes for **same account** within 30 s — automated or shared-credential access |
+
+Rules 101407 and 101408 use `<if_matched_sid>` to chain off the brute-force rules, so they only fire when a successful login follows a burst of failures from the same IP — not on every successful login.
+
+All correlation rules carry compliance tags: `pci_dss_11.4`, `pci_dss_10.2.4`, `pci_dss_10.2.5`, `gdpr_IV_35.7.d`, `hipaa_164.312.b`, `nist_800_53_SI.2`, `nist_800_53_AC.7`.
 
 ---
 
@@ -468,7 +534,7 @@ Covers 700+ event log IDs including:
 - HA failover and sync
 - Interface up/down
 - Memory conserve mode enter/exit
-- VPN tunnel up/down
+- VPN tunnel up/down (IPsec and SSL)
 - DHCP lease events
 - NTP sync events
 - Certificate management
@@ -575,8 +641,8 @@ If a rule is matching a FortiGate log it should not match, add a `<field name="t
     <field name="logid">032002$</field>
     <field name="type">^event$</field>
     <field name="subtype">^system$</field>
-    <description>Admin login failed</description>
-    <group>fortios.event.event,fortios.category.system,fortios.severity.alert</group>
+    <description>Fortigate: Admin login failed</description>
+    <group>fortios.event.event,fortios.category.system,fortios.severity.alert,authentication_failed</group>
 </rule>
 ```
 
@@ -591,6 +657,14 @@ The default Wazuh alert threshold is level 7. Events at level 3 and 4 are indexe
 ```
 
 Alternatively, add specific email or integration actions for level 10+ events only.
+
+### Frequency and correlation rules are not firing
+
+Frequency rules require Wazuh's `timeframe` engine to accumulate enough matching events. Ensure:
+
+- The child rules (e.g., 100365, 100671) are actually generating alerts first — verify with `wazuh-logtest`.
+- `<same_field>` and `<different_field>` directives require the named field to be decoded; confirm `srcip` and `user` are present in the decoded output.
+- Wazuh Manager's `alerts.log` shows the intermediate child rule alerts before the frequency rule can fire.
 
 ---
 
@@ -612,3 +686,7 @@ Alternatively, add specific email or integration actions for level 10+ events on
 **Log ID suffix matching:**
 
 Rules match the last six digits of the 10-digit logid. In the extremely unlikely event that two different FortiGate log types share the same six-digit message ID component, a false positive rule match could occur. If observed, add `<field name="type">` and `<field name="subtype">` filters to the affected rule.
+
+**Frequency and correlation rules:**
+
+Rules 101403–101412 are tuned for moderate-traffic environments. In high-traffic environments with many legitimate users, thresholds (`frequency` and `timeframe` values) may need adjustment to reduce false positives. These rules do not suppress each other — a single brute-force burst may trigger multiple rules simultaneously (e.g., 101403 and 101410 can both fire for the same event stream).
